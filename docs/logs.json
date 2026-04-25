@@ -1,0 +1,17 @@
+{
+  "generated_at": null,
+  "window_days": 7,
+  "last_event_timestamp": null,
+  "total_events": 0,
+  "messages_per_day": {},
+  "llm_calls_by_job": {},
+  "avg_latency_by_job": {},
+  "tokens_per_day": {},
+  "intervals_success_rate": null,
+  "intervals_total": 0,
+  "intervals_failed": 0,
+  "recent_errors": [],
+  "email_count": 0,
+  "last_email_at": null,
+  "recent_events": []
+}
