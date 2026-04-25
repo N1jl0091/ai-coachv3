@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-25T15:16:39.169186+00:00",
+  "generated_at": "2026-04-25T15:18:05.675694+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-04-25T15:16:19.893120+00:00",
-  "total_events": 196,
+  "last_event_timestamp": "2026-04-25T15:17:45.116776+00:00",
+  "total_events": 201,
   "messages_per_day": {
     "2026-04-25": 11
   },
@@ -254,6 +254,74 @@
   "email_count": 0,
   "last_email_at": null,
   "recent_events": [
+    {
+      "id": 201,
+      "timestamp": "2026-04-25T15:17:45.116776+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 200,
+      "timestamp": "2026-04-25T15:17:44.895886+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 199,
+      "timestamp": "2026-04-25T15:17:35.624302+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 198,
+      "timestamp": "2026-04-25T15:17:34.936152+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 197,
+      "timestamp": "2026-04-25T15:16:47.744056+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=196 intervals_ok=98.3% emails=0 errors=12)",
+      "metadata": {
+        "summary": "events=196 intervals_ok=98.3% emails=0 errors=12",
+        "commit_sha": "e25eb1903d1768e7d550c9606d5593a0407869f3"
+      }
+    },
     {
       "id": 196,
       "timestamp": "2026-04-25T15:16:19.893120+00:00",
@@ -591,121 +659,6 @@
       "tokens_out": null,
       "severity": "info",
       "message": "GET /athlete/i564128/events",
-      "metadata": {}
-    },
-    {
-      "id": 171,
-      "timestamp": "2026-04-25T15:10:58.543809+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 584,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/wellness",
-      "metadata": {}
-    },
-    {
-      "id": 170,
-      "timestamp": "2026-04-25T15:10:30.660607+00:00",
-      "event_type": "error",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "llm_error: groq call failed: Error code: 400 - {'error': {'message': \"'messages.6' : for 'role:tool' the following must be satisfied[('messages.6.tool_call_id' : property 'tool_call_id' is missing)]\", 'type': 'invalid_request_error'}}",
-      "metadata": {
-        "handler": "on_message"
-      }
-    },
-    {
-      "id": 169,
-      "timestamp": "2026-04-25T15:10:30.021996+00:00",
-      "event_type": "error",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "Tool create_workout raised: [422] POST /athlete/i564128/events failed with 422: {\"status\":422,\"error\":\"Invalid start date: java.time.format.DateTimeParseException: Text '2026-04-26' could not be parsed at index 10\"}",
-      "metadata": {
-        "args": {
-          "date": "2026-04-26",
-          "tags": [
-            "fast pace",
-            "endurance"
-          ],
-          "color": "#FF9800",
-          "sport": "Run",
-          "steps": [
-            {
-              "type": "warmup",
-              "zone": 1,
-              "notes": "Easy jog",
-              "target_low": null,
-              "target_high": null,
-              "target_type": "pace",
-              "distance_meters": null,
-              "duration_seconds": 600
-            },
-            {
-              "type": "steady",
-              "zone": 4,
-              "notes": "Fast pace",
-              "target_low": 240,
-              "target_high": 260,
-              "target_type": "pace",
-              "distance_meters": 10000,
-              "duration_seconds": 3600
-            },
-            {
-              "type": "cooldown",
-              "zone": 1,
-              "notes": "Easy jog",
-              "target_low": null,
-              "target_high": null,
-              "target_type": "pace",
-              "distance_meters": null,
-              "duration_seconds": 600
-            }
-          ],
-          "title": "10km Fast Pace Run",
-          "gym_sets": [],
-          "description": "10km fast pace run with warmup and cooldown",
-          "planned_tss": 70,
-          "planned_duration_seconds": 4800
-        },
-        "tool": "create_workout"
-      }
-    },
-    {
-      "id": 168,
-      "timestamp": "2026-04-25T15:10:30.002499+00:00",
-      "event_type": "intervals_write",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 191,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "POST /athlete/i564128/events \u2192 422: {\"status\":422,\"error\":\"Invalid start date: java.time.format.DateTimeParseException: Text '2026-04-26' could not be parsed at index 10\"}",
-      "metadata": {}
-    },
-    {
-      "id": 167,
-      "timestamp": "2026-04-25T15:10:29.799802+00:00",
-      "event_type": "llm_call",
-      "job": "executor",
-      "model_used": "llama-3.3-70b-versatile",
-      "latency_ms": 1193,
-      "tokens_in": 4009,
-      "tokens_out": 261,
-      "severity": "info",
-      "message": "groq/llama-3.3-70b-versatile (executor)",
       "metadata": {}
     }
   ]
