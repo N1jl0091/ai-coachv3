@@ -64,6 +64,9 @@ def render_context_for_prompt(context: dict[str, Any]) -> str:
     if profile:
         injuries = ", ".join(profile.get("current_injuries") or []) or "none"
         limiters = ", ".join(profile.get("limiters") or []) or "none"
+        goal_target = profile.get("goal_time_target")
+        goal_target_str = f", target {goal_target}" if goal_target else ""
+
         lines.append("")
         lines.append("ATHLETE:")
         lines.append(
@@ -75,8 +78,7 @@ def render_context_for_prompt(context: dict[str, Any]) -> str:
         lines.append(
             f"  Goal: {profile.get('goal_event') or '—'} "
             f"{profile.get('goal_date') or ''} "
-            f"({profile.get('goal_type') or '—'}"
-            f"{f', target {profile.get(\"goal_time_target\")}' if profile.get('goal_time_target') else ''})"
+            f"({profile.get('goal_type') or '—'}{goal_target_str})"
         )
         lines.append(f"  Injuries: {injuries} | Limiters: {limiters}")
         lines.append(
@@ -111,11 +113,12 @@ def render_context_for_prompt(context: dict[str, Any]) -> str:
         for a in activities:
             mins = round((a.get("moving_time") or 0) / 60)
             km = round((a.get("distance") or 0) / 1000, 1)
+            km_str = f", {km}km" if km else ""
             lines.append(
-                f"  {str(a.get('start_date_local',''))[:10]} "
-                f"{a.get('type','')} — {a.get('name','')} "
-                f"({mins}min{f', {km}km' if km else ''}, "
-                f"TSS={a.get('icu_training_load','—')})"
+                f"  {str(a.get('start_date_local', ''))[:10]} "
+                f"{a.get('type', '')} — {a.get('name', '')} "
+                f"({mins}min{km_str}, "
+                f"TSS={a.get('icu_training_load', '—')})"
             )
 
     # ── Next 7 planned (one line each, keep event id for executor) ────────
@@ -126,9 +129,9 @@ def render_context_for_prompt(context: dict[str, Any]) -> str:
         for e in planned:
             mins = round((e.get("moving_time") or 0) / 60)
             lines.append(
-                f"  {str(e.get('start_date_local',''))[:10]} "
-                f"{e.get('type','')} — {e.get('name','')} "
-                f"({mins}min, TSS={e.get('icu_training_load','—')}) "
+                f"  {str(e.get('start_date_local', ''))[:10]} "
+                f"{e.get('type', '')} — {e.get('name', '')} "
+                f"({mins}min, TSS={e.get('icu_training_load', '—')}) "
                 f"[id={e.get('id')}]"
             )
 
