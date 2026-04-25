@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-25T15:19:34.089964+00:00",
+  "generated_at": "2026-04-25T15:21:07.238765+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-04-25T15:19:14.868614+00:00",
-  "total_events": 206,
+  "last_event_timestamp": "2026-04-25T15:20:47.959373+00:00",
+  "total_events": 211,
   "messages_per_day": {
     "2026-04-25": 11
   },
@@ -254,6 +254,74 @@
   "email_count": 0,
   "last_email_at": null,
   "recent_events": [
+    {
+      "id": 211,
+      "timestamp": "2026-04-25T15:20:47.959373+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 210,
+      "timestamp": "2026-04-25T15:20:47.669875+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 209,
+      "timestamp": "2026-04-25T15:20:37.174821+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 208,
+      "timestamp": "2026-04-25T15:20:36.475554+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 207,
+      "timestamp": "2026-04-25T15:19:42.166249+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=206 intervals_ok=98.3% emails=0 errors=12)",
+      "metadata": {
+        "summary": "events=206 intervals_ok=98.3% emails=0 errors=12",
+        "commit_sha": "76be4e4274546f61af9ea92bc636f060f64cdc21"
+      }
+    },
     {
       "id": 206,
       "timestamp": "2026-04-25T15:19:14.868614+00:00",
@@ -592,73 +660,6 @@
       "metadata": {
         "summary": "events=181 intervals_ok=98.3% emails=0 errors=12",
         "commit_sha": "3a389b3736bedbfc9f21307adc510616b62d56a9"
-      }
-    },
-    {
-      "id": 181,
-      "timestamp": "2026-04-25T15:11:23.745957+00:00",
-      "event_type": "shutdown",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "ai-coach stopped",
-      "metadata": {}
-    },
-    {
-      "id": 180,
-      "timestamp": "2026-04-25T15:11:23.503603+00:00",
-      "event_type": "system",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Telegram bot stopped",
-      "metadata": {}
-    },
-    {
-      "id": 179,
-      "timestamp": "2026-04-25T15:11:16.031288+00:00",
-      "event_type": "system",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Telegram bot polling started",
-      "metadata": {}
-    },
-    {
-      "id": 178,
-      "timestamp": "2026-04-25T15:11:15.311344+00:00",
-      "event_type": "startup",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "ai-coach booting",
-      "metadata": {}
-    },
-    {
-      "id": 177,
-      "timestamp": "2026-04-25T15:10:59.330648+00:00",
-      "event_type": "error",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "llm_error: groq call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq0dq479etz8g3h98qv3nada` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97732, Requested 4289. Please try again in 29m6.144s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
-      "metadata": {
-        "handler": "on_message"
       }
     }
   ]
