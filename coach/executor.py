@@ -130,12 +130,15 @@ TOOLS: list[dict[str, Any]] = [
     },
     {
         "name": "move_workout",
-        "description": "Reschedule an existing workout to a different date.",
+        "description": "Reschedule an existing workout to a different date/time. Use update_workout if you also need to change the structure.",
         "input_schema": {
             "type": "object",
             "properties": {
                 "event_id": {"type": "integer"},
-                "new_date": {"type": "string", "description": "ISO YYYY-MM-DD"},
+                "new_date": {
+                    "type": "string",
+                    "description": "ISO datetime YYYY-MM-DDTHH:MM:SS (include time if athlete specified one, e.g. 2026-04-26T08:00:00)",
+                },
             },
             "required": ["event_id", "new_date"],
         },

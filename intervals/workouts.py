@@ -43,12 +43,18 @@ async def update_workout(
 ) -> dict[str, Any]:
     """Patch a single calendar event."""
     client = client or get_client()
-    # Allow caller to use shorthand keys.
     payload = dict(updates)
+    # Normalise key aliases.
     if "date" in payload and "start_date_local" not in payload:
         payload["start_date_local"] = payload.pop("date")
     if "title" in payload and "name" not in payload:
         payload["name"] = payload.pop("title")
+    # Intervals.icu requires full ISO-8601 datetime for start_date_local.
+    # If the LLM supplied a bare date ("2026-04-26") add a time component.
+    if "start_date_local" in payload:
+        val = str(payload["start_date_local"])
+        if "T" not in val:
+            payload["start_date_local"] = val + "T00:00:00"
     result = await client.update_event(event_id, payload)
     return {
         "ok": True,
@@ -62,6 +68,9 @@ async def move_workout(
     event_id: int, new_date: str, client: IntervalsClient | None = None
 ) -> dict[str, Any]:
     client = client or get_client()
+    # Intervals.icu requires full datetime — append time if only date given.
+    if "T" not in new_date:
+        new_date = new_date + "T00:00:00"
     await client.move_event(event_id, new_date)
     return {"ok": True, "event_id": event_id, "moved_to": new_date}
 

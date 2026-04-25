@@ -199,10 +199,11 @@ class LLMClient:
 
         client = AsyncOpenAI(api_key=api_key, base_url=base_url)
 
-        # Build the messages array with the system prompt up front.
+        # Build the messages array with the system prompt up front. We must
+        # translate our generic role/content shape into OpenAI's tool-call
+        # format, mirroring what _anthropic_messages does for Anthropic.
         oai_messages: list[dict] = [{"role": "system", "content": system}]
-        for m in messages:
-            oai_messages.append({"role": m["role"], "content": m["content"]})
+        oai_messages.extend(_openai_messages(messages))
 
         kwargs: dict[str, Any] = dict(
             model=model,
@@ -251,11 +252,16 @@ class LLMClient:
 # ─── helpers ───────────────────────────────────────────────────────────────
 
 
-def _anthropic_messages(messages: list[dict[str, str]]) -> list[dict]:
+def _anthropic_messages(messages: list[dict[str, Any]]) -> list[dict]:
     """
     Convert a generic role/content list into Anthropic's content block format.
-    Tool-result entries (role='tool', tool_use_id=..., content=...) are
-    wrapped in the structured form Anthropic expects.
+
+    Recognised generic message shapes:
+      - {"role": "user" | "assistant", "content": "<str>"}
+      - {"role": "assistant_tool_use",
+         "content": "<str>",                # text the assistant emitted (may be "")
+         "tool_calls": [{"id":..,"name":..,"arguments":dict}, ...]}
+      - {"role": "tool", "tool_use_id": "<id>", "content": "<str>"}
     """
     out: list[dict] = []
     for m in messages:
@@ -272,8 +278,79 @@ def _anthropic_messages(messages: list[dict[str, str]]) -> list[dict]:
                 ],
             })
         elif role == "assistant_tool_use":
-            # Replay an assistant tool_use turn.
-            out.append({"role": "assistant", "content": m["content"]})
+            blocks: list[dict] = []
+            text = m.get("content") or ""
+            if isinstance(text, list):
+                # Backwards compat: caller already supplied Anthropic blocks.
+                blocks = text
+            else:
+                if text.strip():
+                    blocks.append({"type": "text", "text": text})
+                for tc in m.get("tool_calls") or []:
+                    blocks.append({
+                        "type": "tool_use",
+                        "id": tc["id"],
+                        "name": tc["name"],
+                        "input": tc.get("arguments") or {},
+                    })
+            out.append({"role": "assistant", "content": blocks or [{"type": "text", "text": ""}]})
+        else:
+            out.append({"role": role, "content": m["content"]})
+    return out
+
+
+def _openai_messages(messages: list[dict[str, Any]]) -> list[dict]:
+    """
+    Convert a generic role/content list into OpenAI / Groq / Ollama format.
+
+    Recognised generic message shapes match `_anthropic_messages`. Translation:
+      - 'tool'              -> {"role": "tool", "tool_call_id": <id>, "content": <str>}
+      - 'assistant_tool_use'-> {"role": "assistant",
+                                "content": <text or null>,
+                                "tool_calls": [{"id":..,"type":"function","function":{...}}]}
+    """
+    out: list[dict] = []
+    for m in messages:
+        role = m["role"]
+        if role == "tool":
+            out.append({
+                "role": "tool",
+                "tool_call_id": m["tool_use_id"],
+                "content": m["content"],
+            })
+        elif role == "assistant_tool_use":
+            text = m.get("content") or ""
+            tool_calls_in = m.get("tool_calls") or []
+            # If caller stored Anthropic-style blocks (legacy), unpack them.
+            if isinstance(text, list):
+                blocks = text
+                text = ""
+                tool_calls_in = []
+                for b in blocks:
+                    bt = b.get("type") if isinstance(b, dict) else None
+                    if bt == "text":
+                        text = b.get("text", "")
+                    elif bt == "tool_use":
+                        tool_calls_in.append({
+                            "id": b.get("id"),
+                            "name": b.get("name"),
+                            "arguments": b.get("input") or {},
+                        })
+            out.append({
+                "role": "assistant",
+                "content": text or None,
+                "tool_calls": [
+                    {
+                        "id": tc["id"],
+                        "type": "function",
+                        "function": {
+                            "name": tc["name"],
+                            "arguments": json.dumps(tc.get("arguments") or {}),
+                        },
+                    }
+                    for tc in tool_calls_in
+                ],
+            })
         else:
             out.append({"role": role, "content": m["content"]})
     return out
