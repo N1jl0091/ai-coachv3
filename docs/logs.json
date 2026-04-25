@@ -1,16 +1,33 @@
 {
-  "generated_at": "2026-04-25T14:52:11.413869+00:00",
+  "generated_at": "2026-04-25T14:53:46.424259+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-04-25T14:51:50.752719+00:00",
-  "total_events": 16,
-  "messages_per_day": {},
+  "last_event_timestamp": "2026-04-25T14:53:44.333392+00:00",
+  "total_events": 29,
+  "messages_per_day": {
+    "2026-04-25": 1
+  },
   "llm_calls_by_job": {},
   "avg_latency_by_job": {},
   "tokens_per_day": {},
-  "intervals_success_rate": null,
-  "intervals_total": 0,
+  "intervals_success_rate": 100.0,
+  "intervals_total": 5,
   "intervals_failed": 0,
   "recent_errors": [
+    {
+      "id": 29,
+      "timestamp": "2026-04-25T14:53:44.333392+00:00",
+      "event_type": "error",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "error",
+      "message": "llm_error: ANTHROPIC_API_KEY is not set",
+      "metadata": {
+        "handler": "on_message"
+      }
+    },
     {
       "id": 12,
       "timestamp": "2026-04-25T14:50:45.133797+00:00",
@@ -63,6 +80,185 @@
   "email_count": 0,
   "last_email_at": null,
   "recent_events": [
+    {
+      "id": 29,
+      "timestamp": "2026-04-25T14:53:44.333392+00:00",
+      "event_type": "error",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "error",
+      "message": "llm_error: ANTHROPIC_API_KEY is not set",
+      "metadata": {
+        "handler": "on_message"
+      }
+    },
+    {
+      "id": 28,
+      "timestamp": "2026-04-25T14:53:44.123530+00:00",
+      "event_type": "message_in",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "intent=chat: Mon,tue,wed,thur,fri,sat,sun",
+      "metadata": {
+        "intent": "chat",
+        "telegram_id": "8622052455"
+      }
+    },
+    {
+      "id": 27,
+      "timestamp": "2026-04-25T14:53:44.077981+00:00",
+      "event_type": "intervals_read",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 573,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "GET /athlete/i564128/wellness",
+      "metadata": {}
+    },
+    {
+      "id": 26,
+      "timestamp": "2026-04-25T14:53:44.077495+00:00",
+      "event_type": "intervals_read",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 577,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "GET /athlete/i564128/wellness/2026-04-25",
+      "metadata": {}
+    },
+    {
+      "id": 25,
+      "timestamp": "2026-04-25T14:53:44.077124+00:00",
+      "event_type": "intervals_read",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 565,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "GET /athlete/i564128",
+      "metadata": {}
+    },
+    {
+      "id": 24,
+      "timestamp": "2026-04-25T14:53:44.074786+00:00",
+      "event_type": "intervals_read",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 568,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "GET /athlete/i564128/activities",
+      "metadata": {}
+    },
+    {
+      "id": 23,
+      "timestamp": "2026-04-25T14:53:43.758611+00:00",
+      "event_type": "intervals_read",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 562,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "GET /athlete/i564128/events",
+      "metadata": {}
+    },
+    {
+      "id": 22,
+      "timestamp": "2026-04-25T14:53:23.560440+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 21,
+      "timestamp": "2026-04-25T14:53:23.345364+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 20,
+      "timestamp": "2026-04-25T14:53:16.356575+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 19,
+      "timestamp": "2026-04-25T14:53:15.679282+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 18,
+      "timestamp": "2026-04-25T14:52:19.998244+00:00",
+      "event_type": "session_start",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Started session",
+      "metadata": {
+        "chat_id": "8622052455"
+      }
+    },
+    {
+      "id": 17,
+      "timestamp": "2026-04-25T14:52:19.652842+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=16 intervals_ok=None% emails=0 errors=3)",
+      "metadata": {
+        "summary": "events=16 intervals_ok=None% emails=0 errors=3",
+        "commit_sha": "054c5f1470e2501ae590dfa40afb1d9ea138d728"
+      }
+    },
     {
       "id": 16,
       "timestamp": "2026-04-25T14:51:50.752719+00:00",
