@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-25T15:05:19.120855+00:00",
+  "generated_at": "2026-04-25T15:08:35.849133+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-04-25T15:04:55.406855+00:00",
-  "total_events": 139,
+  "last_event_timestamp": "2026-04-25T15:08:21.890505+00:00",
+  "total_events": 145,
   "messages_per_day": {
     "2026-04-25": 8
   },
@@ -148,6 +148,89 @@
   "email_count": 0,
   "last_email_at": null,
   "recent_events": [
+    {
+      "id": 145,
+      "timestamp": "2026-04-25T15:08:21.890505+00:00",
+      "event_type": "session_start",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Started session",
+      "metadata": {
+        "chat_id": "8622052455"
+      }
+    },
+    {
+      "id": 144,
+      "timestamp": "2026-04-25T15:08:05.813157+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 143,
+      "timestamp": "2026-04-25T15:08:05.125487+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 142,
+      "timestamp": "2026-04-25T15:05:51.566267+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 141,
+      "timestamp": "2026-04-25T15:05:51.237010+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 140,
+      "timestamp": "2026-04-25T15:05:27.073307+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=139 intervals_ok=100.0% emails=0 errors=8)",
+      "metadata": {
+        "summary": "events=139 intervals_ok=100.0% emails=0 errors=8",
+        "commit_sha": "5eb4bcbb7c02e6b1d73389afb0b7bd849879eab7"
+      }
+    },
     {
       "id": 139,
       "timestamp": "2026-04-25T15:04:55.406855+00:00",
@@ -470,90 +553,6 @@
       "tokens_out": null,
       "severity": "info",
       "message": "ai-coach stopped",
-      "metadata": {}
-    },
-    {
-      "id": 115,
-      "timestamp": "2026-04-25T15:01:44.820907+00:00",
-      "event_type": "system",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Telegram bot stopped",
-      "metadata": {}
-    },
-    {
-      "id": 114,
-      "timestamp": "2026-04-25T15:01:40.504504+00:00",
-      "event_type": "dashboard_pushed",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=111 intervals_ok=100.0% emails=0 errors=8)",
-      "metadata": {
-        "summary": "events=111 intervals_ok=100.0% emails=0 errors=8",
-        "commit_sha": "8b5fa5ac3ef1cf42ace53fc3438f3261599d255a"
-      }
-    },
-    {
-      "id": 113,
-      "timestamp": "2026-04-25T15:01:37.302476+00:00",
-      "event_type": "system",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Telegram bot polling started",
-      "metadata": {}
-    },
-    {
-      "id": 112,
-      "timestamp": "2026-04-25T15:01:36.606776+00:00",
-      "event_type": "startup",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "ai-coach booting",
-      "metadata": {}
-    },
-    {
-      "id": 111,
-      "timestamp": "2026-04-25T15:01:18.687751+00:00",
-      "event_type": "message_out",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Replied to chat 8622052455 (162 chars)",
-      "metadata": {
-        "chat_id": "8622052455",
-        "reply_len": 162
-      }
-    },
-    {
-      "id": 110,
-      "timestamp": "2026-04-25T15:01:18.449752+00:00",
-      "event_type": "llm_call",
-      "job": "reasoning",
-      "model_used": "llama-3.3-70b-versatile",
-      "latency_ms": 620,
-      "tokens_in": 1484,
-      "tokens_out": 50,
-      "severity": "info",
-      "message": "groq/llama-3.3-70b-versatile (reasoning)",
       "metadata": {}
     }
   ]
