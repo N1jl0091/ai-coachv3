@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-25T15:18:05.675694+00:00",
+  "generated_at": "2026-04-25T15:19:34.089964+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-04-25T15:17:45.116776+00:00",
-  "total_events": 201,
+  "last_event_timestamp": "2026-04-25T15:19:14.868614+00:00",
+  "total_events": 206,
   "messages_per_day": {
     "2026-04-25": 11
   },
@@ -254,6 +254,74 @@
   "email_count": 0,
   "last_email_at": null,
   "recent_events": [
+    {
+      "id": 206,
+      "timestamp": "2026-04-25T15:19:14.868614+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 205,
+      "timestamp": "2026-04-25T15:19:14.571900+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 204,
+      "timestamp": "2026-04-25T15:19:04.033566+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 203,
+      "timestamp": "2026-04-25T15:19:03.341146+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 202,
+      "timestamp": "2026-04-25T15:18:14.136214+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=201 intervals_ok=98.3% emails=0 errors=12)",
+      "metadata": {
+        "summary": "events=201 intervals_ok=98.3% emails=0 errors=12",
+        "commit_sha": "1a91f3baa78918474caf9ae3d5ae0c203ed9ecf2"
+      }
+    },
     {
       "id": 201,
       "timestamp": "2026-04-25T15:17:45.116776+00:00",
@@ -592,74 +660,6 @@
       "metadata": {
         "handler": "on_message"
       }
-    },
-    {
-      "id": 176,
-      "timestamp": "2026-04-25T15:10:58.568792+00:00",
-      "event_type": "message_in",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "intent=tool: For tomorrow please add 10km with structure for a fast paste run",
-      "metadata": {
-        "intent": "tool",
-        "telegram_id": "8622052455"
-      }
-    },
-    {
-      "id": 175,
-      "timestamp": "2026-04-25T15:10:58.552215+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 596,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128",
-      "metadata": {}
-    },
-    {
-      "id": 174,
-      "timestamp": "2026-04-25T15:10:58.549844+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 592,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/activities",
-      "metadata": {}
-    },
-    {
-      "id": 173,
-      "timestamp": "2026-04-25T15:10:58.548571+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 591,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/wellness/2026-04-25",
-      "metadata": {}
-    },
-    {
-      "id": 172,
-      "timestamp": "2026-04-25T15:10:58.545392+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 587,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/events",
-      "metadata": {}
     }
   ]
 }
