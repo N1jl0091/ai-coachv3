@@ -1,28 +1,79 @@
 {
-  "generated_at": "2026-04-25T16:13:31.988580+00:00",
+  "generated_at": "2026-04-25T18:48:02.756394+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-04-25T16:13:15.887817+00:00",
-  "total_events": 280,
+  "last_event_timestamp": "2026-04-25T17:55:01.351243+00:00",
+  "total_events": 341,
   "messages_per_day": {
-    "2026-04-25": 13
+    "2026-04-25": 14
   },
   "llm_calls_by_job": {
+    "executor": 2,
+    "analysis": 1,
     "reasoning": 5,
-    "router": 5,
-    "executor": 1
+    "router": 5
   },
   "avg_latency_by_job": {
+    "executor": 1174,
+    "analysis": 1577,
     "reasoning": 695,
-    "router": 472,
-    "executor": 1193
+    "router": 472
   },
   "tokens_per_day": {
-    "2026-04-25": 12904
+    "2026-04-25": 17853
   },
-  "intervals_success_rate": 98.6,
-  "intervals_total": 72,
+  "intervals_success_rate": 99.0,
+  "intervals_total": 103,
   "intervals_failed": 1,
   "recent_errors": [
+    {
+      "id": 341,
+      "timestamp": "2026-04-25T17:55:01.351243+00:00",
+      "event_type": "error",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "error",
+      "message": "llm_error: groq call failed: Error code: 400 - {'error': {'message': \"'messages.4' : for 'role:tool' the following must be satisfied[('messages.4.tool_call_id' : property 'tool_call_id' is missing)]\", 'type': 'invalid_request_error'}}",
+      "metadata": {
+        "handler": "on_message"
+      }
+    },
+    {
+      "id": 329,
+      "timestamp": "2026-04-25T16:54:51.322988+00:00",
+      "event_type": "email_failed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "error",
+      "message": "Resend send failed: You can only send testing emails to your own email address (nikolaslowther@icloud.com). To send emails to other recipients, please verify a domain at resend.com/domains, and change the `from` address to an email using this domain.",
+      "metadata": {
+        "to": "nikolaslowther@outlook.com",
+        "subject": "Coach review \u00b7 Cape Town Trail Running (TrailRun)",
+        "strava_id": "18255136536",
+        "activity_date": "2026-04-25",
+        "activity_name": "Cape Town Trail Running"
+      }
+    },
+    {
+      "id": 316,
+      "timestamp": "2026-04-25T16:45:13.106728+00:00",
+      "event_type": "activity_analysis_error",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "error",
+      "message": "Background analysis crashed: name 'date' is not defined",
+      "metadata": {
+        "activity_id": "18255032290"
+      }
+    },
     {
       "id": 280,
       "timestamp": "2026-04-25T16:13:15.887817+00:00",
@@ -270,8 +321,8 @@
   "last_email_at": null,
   "recent_events": [
     {
-      "id": 280,
-      "timestamp": "2026-04-25T16:13:15.887817+00:00",
+      "id": 341,
+      "timestamp": "2026-04-25T17:55:01.351243+00:00",
       "event_type": "error",
       "job": "system",
       "model_used": null,
@@ -279,14 +330,43 @@
       "tokens_in": null,
       "tokens_out": null,
       "severity": "error",
-      "message": "llm_error: groq call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq0dq479etz8g3h98qv3nada` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 96747, Requested 3814. Please try again in 8m4.704s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+      "message": "llm_error: groq call failed: Error code: 400 - {'error': {'message': \"'messages.4' : for 'role:tool' the following must be satisfied[('messages.4.tool_call_id' : property 'tool_call_id' is missing)]\", 'type': 'invalid_request_error'}}",
       "metadata": {
         "handler": "on_message"
       }
     },
     {
-      "id": 279,
-      "timestamp": "2026-04-25T16:13:15.264830+00:00",
+      "id": 340,
+      "timestamp": "2026-04-25T17:55:00.629307+00:00",
+      "event_type": "intervals_write",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Created event '10km Tempo Run' on 2026-04-26T00:00:00",
+      "metadata": {
+        "event_id": 106442376,
+        "event_name": "10km Tempo Run"
+      }
+    },
+    {
+      "id": 339,
+      "timestamp": "2026-04-25T17:55:00.362898+00:00",
+      "event_type": "llm_call",
+      "job": "executor",
+      "model_used": "llama-3.3-70b-versatile",
+      "latency_ms": 1154,
+      "tokens_in": 3677,
+      "tokens_out": 284,
+      "severity": "info",
+      "message": "groq/llama-3.3-70b-versatile (executor)",
+      "metadata": {}
+    },
+    {
+      "id": 338,
+      "timestamp": "2026-04-25T17:54:59.182431+00:00",
       "event_type": "message_in",
       "job": "system",
       "model_used": null,
@@ -294,19 +374,19 @@
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
-      "message": "intent=tool: lets add a 10km run please at tempo, please strucutre how you think would be suitable",
+      "message": "intent=tool: Can we plan a 10km run for tomorrow - road specific and at tempo, please structure as you see fit",
       "metadata": {
         "intent": "tool",
         "telegram_id": "8622052455"
       }
     },
     {
-      "id": 278,
-      "timestamp": "2026-04-25T16:13:15.243306+00:00",
+      "id": 337,
+      "timestamp": "2026-04-25T17:54:59.141667+00:00",
       "event_type": "intervals_read",
       "job": "system",
       "model_used": null,
-      "latency_ms": 579,
+      "latency_ms": 500,
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
@@ -314,25 +394,12 @@
       "metadata": {}
     },
     {
-      "id": 277,
-      "timestamp": "2026-04-25T16:13:15.228407+00:00",
+      "id": 336,
+      "timestamp": "2026-04-25T17:54:59.139420+00:00",
       "event_type": "intervals_read",
       "job": "system",
       "model_used": null,
-      "latency_ms": 569,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/activities",
-      "metadata": {}
-    },
-    {
-      "id": 276,
-      "timestamp": "2026-04-25T16:13:15.225064+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 566,
+      "latency_ms": 500,
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
@@ -340,12 +407,12 @@
       "metadata": {}
     },
     {
-      "id": 275,
-      "timestamp": "2026-04-25T16:13:15.214157+00:00",
+      "id": 334,
+      "timestamp": "2026-04-25T17:54:59.136799+00:00",
       "event_type": "intervals_read",
       "job": "system",
       "model_used": null,
-      "latency_ms": 552,
+      "latency_ms": 497,
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
@@ -353,12 +420,12 @@
       "metadata": {}
     },
     {
-      "id": 274,
-      "timestamp": "2026-04-25T16:13:15.212662+00:00",
+      "id": 335,
+      "timestamp": "2026-04-25T17:54:59.136556+00:00",
       "event_type": "intervals_read",
       "job": "system",
       "model_used": null,
-      "latency_ms": 551,
+      "latency_ms": 491,
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
@@ -366,70 +433,146 @@
       "metadata": {}
     },
     {
-      "id": 273,
-      "timestamp": "2026-04-25T16:12:48.046177+00:00",
-      "event_type": "message_out",
+      "id": 333,
+      "timestamp": "2026-04-25T17:54:58.861055+00:00",
+      "event_type": "intervals_read",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 489,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "GET /athlete/i564128/activities",
+      "metadata": {}
+    },
+    {
+      "id": 332,
+      "timestamp": "2026-04-25T17:54:29.441593+00:00",
+      "event_type": "intervals_read",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 167,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "GET /athlete/i564128/events",
+      "metadata": {}
+    },
+    {
+      "id": 331,
+      "timestamp": "2026-04-25T17:54:29.250550+00:00",
+      "event_type": "intervals_read",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 498,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "GET /athlete/i564128/wellness/2026-04-25",
+      "metadata": {}
+    },
+    {
+      "id": 330,
+      "timestamp": "2026-04-25T16:54:51.343742+00:00",
+      "event_type": "activity_analysis_done",
       "job": "system",
       "model_used": null,
       "latency_ms": null,
       "tokens_in": null,
       "tokens_out": null,
-      "severity": "info",
-      "message": "Replied to chat 8622052455 (226 chars)",
+      "severity": "warning",
+      "message": "Activity 18255136536 analysis: False",
       "metadata": {
-        "chat_id": "8622052455",
-        "reply_len": 226
+        "ok": false,
+        "email": {
+          "ok": false,
+          "error": "You can only send testing emails to your own email address (nikolaslowther@icloud.com). To send emails to other recipients, please verify a domain at resend.com/domains, and change the `from` address to an email using this domain."
+        },
+        "activity_id": "i142883986",
+        "activity_date": "2026-04-25"
       }
     },
     {
-      "id": 272,
-      "timestamp": "2026-04-25T16:12:47.497210+00:00",
+      "id": 329,
+      "timestamp": "2026-04-25T16:54:51.322988+00:00",
+      "event_type": "email_failed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "error",
+      "message": "Resend send failed: You can only send testing emails to your own email address (nikolaslowther@icloud.com). To send emails to other recipients, please verify a domain at resend.com/domains, and change the `from` address to an email using this domain.",
+      "metadata": {
+        "to": "nikolaslowther@outlook.com",
+        "subject": "Coach review \u00b7 Cape Town Trail Running (TrailRun)",
+        "strava_id": "18255136536",
+        "activity_date": "2026-04-25",
+        "activity_name": "Cape Town Trail Running"
+      }
+    },
+    {
+      "id": 328,
+      "timestamp": "2026-04-25T16:54:50.967696+00:00",
       "event_type": "llm_call",
-      "job": "reasoning",
+      "job": "analysis",
       "model_used": "llama-3.3-70b-versatile",
-      "latency_ms": 583,
-      "tokens_in": 1281,
-      "tokens_out": 58,
+      "latency_ms": 1577,
+      "tokens_in": 704,
+      "tokens_out": 284,
       "severity": "info",
-      "message": "groq/llama-3.3-70b-versatile (reasoning)",
+      "message": "groq/llama-3.3-70b-versatile (analysis)",
       "metadata": {}
     },
     {
-      "id": 271,
-      "timestamp": "2026-04-25T16:12:46.905437+00:00",
-      "event_type": "message_in",
+      "id": 327,
+      "timestamp": "2026-04-25T16:54:49.371705+00:00",
+      "event_type": "intervals_read",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 168,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "GET /athlete/i564128/events",
+      "metadata": {}
+    },
+    {
+      "id": 326,
+      "timestamp": "2026-04-25T16:54:49.184045+00:00",
+      "event_type": "intervals_sync",
       "job": "system",
       "model_used": null,
       "latency_ms": null,
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
-      "message": "intent=chat: what do I have tomorrow",
+      "message": "Activity i142883986 found via recency match (strava webhook id=18255136536)",
       "metadata": {
-        "intent": "chat",
-        "telegram_id": "8622052455"
+        "activity_id": "i142883986",
+        "strava_webhook_id": "18255136536"
       }
     },
     {
-      "id": 270,
-      "timestamp": "2026-04-25T16:12:46.897113+00:00",
-      "event_type": "llm_call",
-      "job": "router",
-      "model_used": "llama-3.1-8b-instant",
-      "latency_ms": 432,
-      "tokens_in": 201,
-      "tokens_out": 2,
-      "severity": "info",
-      "message": "groq/llama-3.1-8b-instant (router)",
-      "metadata": {}
-    },
-    {
-      "id": 269,
-      "timestamp": "2026-04-25T16:12:46.437864+00:00",
+      "id": 325,
+      "timestamp": "2026-04-25T16:54:49.160066+00:00",
       "event_type": "intervals_read",
       "job": "system",
       "model_used": null,
-      "latency_ms": 577,
+      "latency_ms": 169,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "GET /activity/i142883986",
+      "metadata": {}
+    },
+    {
+      "id": 324,
+      "timestamp": "2026-04-25T16:54:48.967896+00:00",
+      "event_type": "intervals_read",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 508,
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
@@ -437,158 +580,46 @@
       "metadata": {}
     },
     {
-      "id": 268,
-      "timestamp": "2026-04-25T16:12:46.432416+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 558,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/events",
-      "metadata": {}
-    },
-    {
-      "id": 267,
-      "timestamp": "2026-04-25T16:12:46.431826+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 573,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128",
-      "metadata": {}
-    },
-    {
-      "id": 266,
-      "timestamp": "2026-04-25T16:12:46.182559+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 572,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/wellness",
-      "metadata": {}
-    },
-    {
-      "id": 265,
-      "timestamp": "2026-04-25T16:12:46.163428+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 555,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/wellness/2026-04-25",
-      "metadata": {}
-    },
-    {
-      "id": 264,
-      "timestamp": "2026-04-25T16:12:26.031773+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 189,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/events",
-      "metadata": {}
-    },
-    {
-      "id": 263,
-      "timestamp": "2026-04-25T16:12:25.834325+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 558,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/wellness/2026-04-25",
-      "metadata": {}
-    },
-    {
-      "id": 262,
-      "timestamp": "2026-04-25T16:12:04.082730+00:00",
-      "event_type": "profile_update",
+      "id": 323,
+      "timestamp": "2026-04-25T16:54:43.427655+00:00",
+      "event_type": "activity_analysis_start",
       "job": "system",
       "model_used": null,
       "latency_ms": null,
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
-      "message": "Initial /setup completed",
+      "message": "Starting analysis for Strava activity 18255136536",
       "metadata": {
-        "fields": [
-          "name",
-          "age",
-          "sports",
-          "primary_sport",
-          "available_days",
-          "hours_per_week",
-          "goal_event",
-          "goal_type",
-          "goal_time_target",
-          "current_injuries",
-          "preferred_intensity",
-          "experience_level",
-          "email",
-          "timezone"
-        ],
-        "chat_id": "8622052455"
+        "strava_id": "18255136536"
       }
     },
     {
-      "id": 261,
-      "timestamp": "2026-04-25T16:10:27.187073+00:00",
-      "event_type": "session_start",
+      "id": 322,
+      "timestamp": "2026-04-25T16:54:43.360975+00:00",
+      "event_type": "strava_webhook_event",
       "job": "system",
       "model_used": null,
       "latency_ms": null,
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
-      "message": "Started session",
+      "message": "object=activity aspect=create id=18255136536",
       "metadata": {
-        "chat_id": "8622052455"
+        "payload": {
+          "updates": {},
+          "owner_id": 53988707,
+          "object_id": 18255136536,
+          "event_time": 1777136082,
+          "aspect_type": "create",
+          "object_type": "activity",
+          "subscription_id": 342594
+        }
       }
     },
     {
-      "id": 260,
-      "timestamp": "2026-04-25T16:10:09.443638+00:00",
-      "event_type": "system",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Telegram bot polling started",
-      "metadata": {}
-    },
-    {
-      "id": 259,
-      "timestamp": "2026-04-25T16:10:08.754068+00:00",
-      "event_type": "startup",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "ai-coach booting",
-      "metadata": {}
-    },
-    {
-      "id": 258,
-      "timestamp": "2026-04-25T16:08:50.453366+00:00",
+      "id": 321,
+      "timestamp": "2026-04-25T16:48:13.498025+00:00",
       "event_type": "shutdown",
       "job": "system",
       "model_used": null,
@@ -600,8 +631,8 @@
       "metadata": {}
     },
     {
-      "id": 257,
-      "timestamp": "2026-04-25T16:08:50.186477+00:00",
+      "id": 320,
+      "timestamp": "2026-04-25T16:48:13.216098+00:00",
       "event_type": "system",
       "job": "system",
       "model_used": null,
@@ -613,23 +644,8 @@
       "metadata": {}
     },
     {
-      "id": 256,
-      "timestamp": "2026-04-25T15:49:17.667033+00:00",
-      "event_type": "session_start",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Started session",
-      "metadata": {
-        "chat_id": "8622052455"
-      }
-    },
-    {
-      "id": 255,
-      "timestamp": "2026-04-25T15:42:54.807580+00:00",
+      "id": 319,
+      "timestamp": "2026-04-25T16:48:02.700226+00:00",
       "event_type": "system",
       "job": "system",
       "model_used": null,
@@ -641,8 +657,8 @@
       "metadata": {}
     },
     {
-      "id": 254,
-      "timestamp": "2026-04-25T15:42:54.115573+00:00",
+      "id": 318,
+      "timestamp": "2026-04-25T16:48:02.008909+00:00",
       "event_type": "startup",
       "job": "system",
       "model_used": null,
@@ -654,21 +670,84 @@
       "metadata": {}
     },
     {
-      "id": 253,
-      "timestamp": "2026-04-25T15:33:52.341793+00:00",
-      "event_type": "shutdown",
+      "id": 317,
+      "timestamp": "2026-04-25T16:47:40.995679+00:00",
+      "event_type": "strava_webhook_event",
       "job": "system",
       "model_used": null,
       "latency_ms": null,
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
-      "message": "ai-coach stopped",
-      "metadata": {}
+      "message": "object=activity aspect=delete id=18255032290",
+      "metadata": {
+        "payload": {
+          "updates": {},
+          "owner_id": 53988707,
+          "object_id": 18255032290,
+          "event_time": 1777135660,
+          "aspect_type": "delete",
+          "object_type": "activity",
+          "subscription_id": 342594
+        }
+      }
     },
     {
-      "id": 252,
-      "timestamp": "2026-04-25T15:33:52.110674+00:00",
+      "id": 316,
+      "timestamp": "2026-04-25T16:45:13.106728+00:00",
+      "event_type": "activity_analysis_error",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "error",
+      "message": "Background analysis crashed: name 'date' is not defined",
+      "metadata": {
+        "activity_id": "18255032290"
+      }
+    },
+    {
+      "id": 315,
+      "timestamp": "2026-04-25T16:45:13.050782+00:00",
+      "event_type": "activity_analysis_start",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Starting analysis for Strava activity 18255032290",
+      "metadata": {
+        "strava_id": "18255032290"
+      }
+    },
+    {
+      "id": 314,
+      "timestamp": "2026-04-25T16:45:12.981504+00:00",
+      "event_type": "strava_webhook_event",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "object=activity aspect=create id=18255032290",
+      "metadata": {
+        "payload": {
+          "updates": {},
+          "owner_id": 53988707,
+          "object_id": 18255032290,
+          "event_time": 1777135512,
+          "aspect_type": "create",
+          "object_type": "activity",
+          "subscription_id": 342594
+        }
+      }
+    },
+    {
+      "id": 313,
+      "timestamp": "2026-04-25T16:42:30.695002+00:00",
       "event_type": "system",
       "job": "system",
       "model_used": null,
@@ -676,20 +755,20 @@
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
-      "message": "Telegram bot stopped",
+      "message": "Telegram bot polling started",
       "metadata": {}
     },
     {
-      "id": 251,
-      "timestamp": "2026-04-25T15:33:36.324646+00:00",
-      "event_type": "shutdown",
+      "id": 312,
+      "timestamp": "2026-04-25T16:42:29.963675+00:00",
+      "event_type": "startup",
       "job": "system",
       "model_used": null,
       "latency_ms": null,
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
-      "message": "ai-coach stopped",
+      "message": "ai-coach booting",
       "metadata": {}
     }
   ]
