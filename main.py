@@ -75,7 +75,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     scheduler = AsyncIOScheduler(timezone="UTC")
     scheduler.add_job(
         scheduled_flush,
-        IntervalTrigger(minutes=15),
+        IntervalTrigger(minutes=120),
         id="dashboard_flush",
         replace_existing=True,
         coalesce=True,
@@ -83,12 +83,6 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     )
     scheduler.start()
     app.state.scheduler = scheduler
-
-    async def _initial_flush() -> None:
-        await asyncio.sleep(30)
-        await scheduled_flush()
-
-    asyncio.create_task(_initial_flush())
 
     logger.info("ai-coach ready")
     try:
