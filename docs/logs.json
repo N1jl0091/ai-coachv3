@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-25T14:50:35.641048+00:00",
+  "generated_at": "2026-04-25T14:52:11.413869+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-04-25T14:50:19.007426+00:00",
-  "total_events": 10,
+  "last_event_timestamp": "2026-04-25T14:51:50.752719+00:00",
+  "total_events": 16,
   "messages_per_day": {},
   "llm_calls_by_job": {},
   "avg_latency_by_job": {},
@@ -11,6 +11,22 @@
   "intervals_total": 0,
   "intervals_failed": 0,
   "recent_errors": [
+    {
+      "id": 12,
+      "timestamp": "2026-04-25T14:50:45.133797+00:00",
+      "event_type": "dashboard_push_failed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "error",
+      "message": "Dashboard push failed: 422 {\"message\": \"Update is not a fast forward\", \"documentation_url\": \"https://docs.github.com/rest/git/refs#update-a-reference\", \"status\": \"422\"}",
+      "metadata": {
+        "ok": false,
+        "error": "422 {\"message\": \"Update is not a fast forward\", \"documentation_url\": \"https://docs.github.com/rest/git/refs#update-a-reference\", \"status\": \"422\"}"
+      }
+    },
     {
       "id": 6,
       "timestamp": "2026-04-25T14:42:27.613208+00:00",
@@ -47,6 +63,90 @@
   "email_count": 0,
   "last_email_at": null,
   "recent_events": [
+    {
+      "id": 16,
+      "timestamp": "2026-04-25T14:51:50.752719+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 15,
+      "timestamp": "2026-04-25T14:51:50.483499+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 14,
+      "timestamp": "2026-04-25T14:51:41.387694+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 13,
+      "timestamp": "2026-04-25T14:51:40.693823+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 12,
+      "timestamp": "2026-04-25T14:50:45.133797+00:00",
+      "event_type": "dashboard_push_failed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "error",
+      "message": "Dashboard push failed: 422 {\"message\": \"Update is not a fast forward\", \"documentation_url\": \"https://docs.github.com/rest/git/refs#update-a-reference\", \"status\": \"422\"}",
+      "metadata": {
+        "ok": false,
+        "error": "422 {\"message\": \"Update is not a fast forward\", \"documentation_url\": \"https://docs.github.com/rest/git/refs#update-a-reference\", \"status\": \"422\"}"
+      }
+    },
+    {
+      "id": 11,
+      "timestamp": "2026-04-25T14:50:43.184039+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=10 intervals_ok=None% emails=0 errors=2)",
+      "metadata": {
+        "summary": "events=10 intervals_ok=None% emails=0 errors=2",
+        "commit_sha": "4fd54cab6540452d08879e2089cd6a7a974af04f"
+      }
+    },
     {
       "id": 10,
       "timestamp": "2026-04-25T14:50:19.007426+00:00",
