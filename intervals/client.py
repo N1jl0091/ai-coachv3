@@ -134,6 +134,10 @@ class IntervalsClient:
     # ── WRITE ───────────────────────────────────────────────────────────────
 
     async def create_event(self, event: dict) -> dict:
+    # Intervals requires datetime not just date
+        if event.get("start_date_local") and len(str(event["start_date_local"])) == 10:
+            event["start_date_local"] = event["start_date_local"] + "T00:00:00"
+    
         result = await self._post(
             f"/athlete/{self.athlete_id}/events", json=event, write=True
         )
@@ -192,6 +196,8 @@ class IntervalsClient:
         return result
 
     async def move_event(self, event_id: int, new_date: str) -> dict:
+        if len(new_date) == 10:
+            new_date = new_date + "T00:00:00"
         return await self.update_event(event_id, {"start_date_local": new_date})
 
     async def update_athlete(self, updates: dict) -> dict:
