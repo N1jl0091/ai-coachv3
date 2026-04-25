@@ -39,41 +39,54 @@ SYNC_POLL_INTERVALS = [5, 10, 15, 20, 30, 30, 45, 45, 60, 60]
 
 async def wait_for_intervals_sync(strava_activity_id: str | int) -> dict[str, Any] | None:
     """
-    Poll Intervals.icu until the Strava activity appears, or give up.
-
-    Intervals re-uses the Strava activity id as its own activity id, so we can
-    look up directly. Returns the activity dict or None if it never showed up.
+    Poll Intervals.icu for the most recently uploaded activity around the
+    time of the Strava webhook. We match by recency rather than strava_id
+    because Garmin→Intervals sync doesn't preserve Strava's activity id.
     """
     client = get_client()
-    activity_id = str(strava_activity_id)
+    today = date.today().isoformat()
+    yesterday = (date.today() - timedelta(days=1)).isoformat()
 
     for delay in SYNC_POLL_INTERVALS:
+        await asyncio.sleep(delay)
         try:
-            activity = await client.get_activity(activity_id, intervals=True)
-            if activity:
-                await log_event(
-                    "intervals_sync",
-                    f"Activity {activity_id} found in Intervals.icu",
-                    severity="info",
-                    metadata={"activity_id": activity_id},
-                )
-                return activity
-        except IntervalsNotFoundError:
-            pass
+            activities = await client.get_activities(
+                yesterday,
+                today,
+                fields="id,start_date_local,type,name,strava_id",
+            )
+            if activities:
+                # Activities are returned newest first.
+                # Take the most recent one — it's the one that just synced.
+                best = activities[0]
+                activity_id = str(best["id"])
+                activity = await client.get_activity(activity_id, intervals=True)
+                if activity:
+                    await log_event(
+                        "intervals_sync",
+                        f"Activity {activity_id} found via recency match "
+                        f"(strava webhook id={strava_activity_id})",
+                        severity="info",
+                        metadata={
+                            "activity_id": activity_id,
+                            "strava_webhook_id": str(strava_activity_id),
+                        },
+                    )
+                    return activity
         except IntervalsAPIError as exc:
             await log_event(
                 "intervals_sync",
-                f"Intervals lookup error for {activity_id}: {exc}",
+                f"Intervals lookup error: {exc}",
                 severity="warning",
-                metadata={"activity_id": activity_id},
+                metadata={"strava_activity_id": str(strava_activity_id)},
             )
-        await asyncio.sleep(delay)
 
     await log_event(
         "intervals_sync",
-        f"Activity {activity_id} never synced to Intervals after polling",
+        f"No recent activity found in Intervals after polling "
+        f"(strava webhook id={strava_activity_id})",
         severity="warning",
-        metadata={"activity_id": activity_id},
+        metadata={"strava_activity_id": str(strava_activity_id)},
     )
     return None
 
