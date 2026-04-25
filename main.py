@@ -5,17 +5,16 @@ Bootstraps:
   - Logging
   - Postgres (auto-creates tables on first run)
   - Telegram long-polling (runs alongside FastAPI in the same process)
-  - APScheduler — periodic dashboard flush + initial flush on startup
+  - APScheduler — periodic dashboard flush every 2 hours
   - Strava webhook router
   - /health endpoint for Railway healthchecks
 
-Run locally:        uvicorn main:app --reload --port 8000
-Run on Railway:     handled by Procfile / railway.toml
+Run on Railway:  handled by Procfile / railway.toml
+Run locally:     uvicorn main:app --reload --port 8000
 """
 
 from __future__ import annotations
 
-import asyncio
 import logging
 from contextlib import asynccontextmanager
 from typing import AsyncIterator
@@ -42,7 +41,6 @@ def _configure_logging() -> None:
         format="%(asctime)s | %(levelname)-7s | %(name)s | %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
     )
-    # Quiet down chatty libraries.
     for noisy in ("httpx", "httpcore", "telegram.ext", "apscheduler", "asyncio"):
         logging.getLogger(noisy).setLevel(logging.WARNING)
 
@@ -71,7 +69,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
         logger.exception("Telegram bot failed to start")
         await log_event("startup_error", f"Telegram bot failed: {exc}", severity="error")
 
-    # Scheduler: dashboard flush every 15 minutes + an initial flush 30s after boot.
+    # Dashboard flush every 2 hours.
     scheduler = AsyncIOScheduler(timezone="UTC")
     scheduler.add_job(
         scheduled_flush,
@@ -136,18 +134,13 @@ async def health() -> dict[str, str]:
 
 @app.post("/admin/flush")
 async def admin_flush() -> dict[str, object]:
-    """
-    Manual trigger for the observability flush. Useful for debugging.
-    Not authenticated — Railway's URL is private; consider putting it behind
-    a secret if you expose this app publicly.
-    """
+    """Manual trigger for the observability dashboard rebuild + GitHub push."""
     from observability.flush import flush_now
     result = await flush_now()
     return {"flushed": True, "result": result}
 
 
 if __name__ == "__main__":
-    # Convenience for `python main.py` — equivalent to uvicorn with our config.
     import uvicorn
     uvicorn.run(
         "main:app",

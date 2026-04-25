@@ -56,15 +56,21 @@ TOOLS: list[dict[str, Any]] = [
                     "items": {
                         "type": "object",
                         "properties": {
-                            "type": {"type": "string"},
+                            "type": {"type": "string", "description": "warmup|interval|rest|cooldown|steady|note"},
                             "duration_seconds": {"type": ["integer", "null"]},
                             "distance_meters": {"type": ["integer", "null"]},
-                            "target_type": {"type": "string"},
+                            "target_type": {
+                                "type": "string",
+                                "description": "ftp_percent|power|zone|hr|hr_zone|hr_percent|lthr_percent|pace|pace_zone|rpe|cadence|open",
+                            },
                             "target_low": {"type": ["number", "null"]},
                             "target_high": {"type": ["number", "null"]},
-                            "zone": {"type": ["integer", "null"]},
+                            "zone": {"type": ["integer", "null"], "description": "1-7"},
+                            "ramp": {"type": ["boolean", "null"], "description": "True for ramp steps"},
+                            "cadence_low": {"type": ["integer", "null"], "description": "rpm"},
+                            "cadence_high": {"type": ["integer", "null"], "description": "rpm"},
                             "notes": {"type": "string"},
-                            "repeat": {"type": "integer"},
+                            "repeat": {"type": "integer", "description": "Set same value on ALL steps in a repeated block"},
                         },
                     },
                 },
@@ -231,14 +237,15 @@ async def handle_tool_request(
             final_text = text.strip() or last_tool_summary
             break
 
-        # Append the assistant turn (tool_use blocks for Anthropic) so
-        # subsequent tool_result entries match.
-        raw = result.get("raw")
-        assistant_blocks = _assistant_blocks_from_raw(raw, tool_calls, text)
-        if assistant_blocks is not None:
-            messages.append({"role": "assistant_tool_use", "content": assistant_blocks})
-        else:
-            messages.append({"role": "assistant", "content": text or ""})
+        # Append the assistant turn (text + tool_calls) so the next request
+        # can replay it correctly for either Anthropic or OpenAI-compatible
+        # providers. The converters in llm_client.py reconstruct provider-
+        # specific shapes from these generic fields.
+        messages.append({
+            "role": "assistant_tool_use",
+            "content": text or "",
+            "tool_calls": tool_calls,
+        })
 
         # Execute each tool call and feed the results back.
         for call in tool_calls:
@@ -320,32 +327,3 @@ async def _execute_tool(call: dict[str, Any], telegram_id: str) -> dict[str, Any
             "result": {"ok": False, "error": str(exc)},
             "summary": f"⚠️ {name} failed: {exc}",
         }
-
-
-def _assistant_blocks_from_raw(
-    raw: Any, tool_calls: list[dict], text: str
-) -> list[dict] | None:
-    """
-    Reconstruct an Anthropic assistant turn that includes the tool_use blocks,
-    so the next request's tool_result references match.
-    """
-    if raw is None:
-        return None
-    # Anthropic raw responses have .content list of blocks.
-    content = getattr(raw, "content", None)
-    if not isinstance(content, list):
-        return None
-
-    rebuilt: list[dict] = []
-    for block in content:
-        btype = getattr(block, "type", None)
-        if btype == "text":
-            rebuilt.append({"type": "text", "text": block.text})
-        elif btype == "tool_use":
-            rebuilt.append({
-                "type": "tool_use",
-                "id": block.id,
-                "name": block.name,
-                "input": block.input or {},
-            })
-    return rebuilt or None
