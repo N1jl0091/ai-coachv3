@@ -9,7 +9,7 @@ from __future__ import annotations
 LLM_JOBS = {
     "reasoning": {
         "provider": "groq",
-        "model": "llama-3.3-70b-versatile",
+        "model": "llama-3.1-8b-instant",
         "temperature": 0.7,
         "max_tokens": 2000,
     },
