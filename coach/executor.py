@@ -134,7 +134,7 @@ TOOLS: list[dict[str, Any]] = [
         "input_schema": {
             "type": "object",
             "properties": {
-                "event_id": {"type": "integer"},
+                "event_id": {"type": ["integer", "string"]},
                 "new_date": {
                     "type": "string",
                     "description": "ISO datetime YYYY-MM-DDTHH:MM:SS (include time if athlete specified one, e.g. 2026-04-26T08:00:00)",
@@ -149,7 +149,7 @@ TOOLS: list[dict[str, Any]] = [
         "input_schema": {
             "type": "object",
             "properties": {
-                "event_id": {"type": "integer"},
+                "event_id": {"type": ["integer", "string"]},
                 "updates": {"type": "object"},
             },
             "required": ["event_id", "updates"],
@@ -160,7 +160,7 @@ TOOLS: list[dict[str, Any]] = [
         "description": "Delete a single workout from the calendar by its event_id.",
         "input_schema": {
             "type": "object",
-            "properties": {"event_id": {"type": "integer"}},
+            "properties": {"event_id": {"type": ["integer", "string"]}},
             "required": ["event_id"],
         },
     },
