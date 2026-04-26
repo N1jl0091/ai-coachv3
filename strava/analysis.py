@@ -27,7 +27,7 @@ from db.logs import log_event
 from db.profile import get_profile_dict
 from emails.resend_client import send_email
 from intervals.client import get_client
-from intervals.exceptions import IntervalsAPIError, IntervalsNotFoundError
+from intervals.exceptions import IntervalsAPIError
 
 logger = logging.getLogger(__name__)
 
@@ -37,43 +37,102 @@ logger = logging.getLogger(__name__)
 SYNC_POLL_INTERVALS = [5, 10, 15, 20, 30, 30, 45, 45, 60, 60]
 
 
-async def wait_for_intervals_sync(strava_activity_id: str | int) -> dict[str, Any] | None:
+async def wait_for_intervals_sync(
+    strava_activity_id: str | int,
+    event_time: int | None = None,
+) -> dict[str, Any] | None:
     """
-    Poll Intervals.icu until the Strava activity appears, or give up.
+    Poll Intervals.icu until the Garmin activity appears, then return it.
 
-    Intervals re-uses the Strava activity id as its own activity id, so we can
-    look up directly. Returns the activity dict or None if it never showed up.
+    Activities sync to Intervals from Garmin directly — not via Strava — so
+    we cannot match by Strava ID. Instead we match by start time:
+      - The Strava webhook gives us event_time (unix epoch ≈ upload time).
+      - We fetch recent Intervals activities and find one whose start_date
+        falls within a 3-hour window before event_time.
+      - Fallback: if no event_time, take the most recent activity today.
     """
+    from datetime import date, datetime, timedelta, timezone as tz
     client = get_client()
-    activity_id = str(strava_activity_id)
+    strava_id_str = str(strava_activity_id)
 
-    for delay in SYNC_POLL_INTERVALS:
+    today = date.today().isoformat()
+    yesterday = (date.today() - timedelta(days=1)).isoformat()
+
+    # Convert event_time to a datetime for comparison.
+    event_dt: datetime | None = None
+    if event_time:
         try:
-            activity = await client.get_activity(activity_id, intervals=True)
-            if activity:
+            event_dt = datetime.fromtimestamp(int(event_time), tz=tz.utc)
+        except Exception:
+            pass
+
+    # Track which Intervals IDs we've already seen so we can detect new ones.
+    seen_ids: set[str] = set()
+    first_poll = True
+
+    for i, delay in enumerate(SYNC_POLL_INTERVALS):
+        try:
+            activities = await client.get_activities(yesterday, today)
+
+            if first_poll:
+                seen_ids = {str(a.get("id")) for a in activities}
+                first_poll = False
+
+            # Try to match by start time proximity to event_time.
+            match = None
+            if event_dt and activities:
+                for a in activities:
+                    start_str = a.get("start_date_local") or ""
+                    if not start_str:
+                        continue
+                    try:
+                        # Intervals returns local time without tz — treat as UTC for comparison.
+                        start_dt = datetime.fromisoformat(start_str.replace("Z", "")).replace(tzinfo=tz.utc)
+                        # Activity start should be within 3 hours before event_time.
+                        if timedelta(0) <= (event_dt - start_dt) <= timedelta(hours=3):
+                            match = a
+                            break
+                    except Exception:
+                        continue
+
+            # Fallback: if no event_time or no time match, take the newest activity
+            # that appeared since we started polling (new ID not in seen_ids).
+            if not match and activities:
+                new = [a for a in activities if str(a.get("id")) not in seen_ids]
+                if new:
+                    match = new[0]  # most recent first
+
+            if match:
+                intervals_id = str(match["id"])
+                try:
+                    full = await client.get_activity(intervals_id, intervals=True)
+                except IntervalsAPIError:
+                    full = match
                 await log_event(
                     "intervals_sync",
-                    f"Activity {activity_id} found in Intervals.icu",
+                    f"Activity found via recency match (strava webhook id={strava_id_str}, intervals id={intervals_id})",
                     severity="info",
-                    metadata={"activity_id": activity_id},
+                    metadata={"strava_id": strava_id_str, "intervals_id": intervals_id},
                 )
-                return activity
-        except IntervalsNotFoundError:
-            pass
+                return full
+
+            seen_ids = {str(a.get("id")) for a in activities}
+
         except IntervalsAPIError as exc:
             await log_event(
                 "intervals_sync",
-                f"Intervals lookup error for {activity_id}: {exc}",
+                f"Intervals activities fetch error: {exc}",
                 severity="warning",
-                metadata={"activity_id": activity_id},
+                metadata={"strava_id": strava_id_str},
             )
+
         await asyncio.sleep(delay)
 
     await log_event(
         "intervals_sync",
-        f"Activity {activity_id} never synced to Intervals after polling",
+        f"Activity strava_id={strava_id_str} never synced to Intervals after polling",
         severity="warning",
-        metadata={"activity_id": activity_id},
+        metadata={"strava_id": strava_id_str},
     )
     return None
 
@@ -150,10 +209,11 @@ def _format_dict(d: dict[str, Any] | None, indent: int = 0) -> str:
     return "\n".join(lines)
 
 
-async def analyse_activity(strava_activity_id: str | int) -> dict[str, Any]:
-    """
-    Full post-activity pipeline. Returns a status dict for logging / debugging.
-    """
+async def analyse_activity(
+    strava_activity_id: str | int,
+    event_time: int | None = None,
+) -> dict[str, Any]:
+    """Full post-activity pipeline. Returns a status dict."""
     await log_event(
         "activity_analysis_start",
         f"Starting analysis for Strava activity {strava_activity_id}",
@@ -161,7 +221,7 @@ async def analyse_activity(strava_activity_id: str | int) -> dict[str, Any]:
         metadata={"strava_id": str(strava_activity_id)},
     )
 
-    activity = await wait_for_intervals_sync(strava_activity_id)
+    activity = await wait_for_intervals_sync(strava_activity_id, event_time=event_time)
     if not activity:
         return {"ok": False, "reason": "intervals_sync_timeout"}
 
