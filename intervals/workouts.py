@@ -140,10 +140,36 @@ async def bulk_create_workouts(
     workouts: list[dict[str, Any]], client: IntervalsClient | None = None
 ) -> dict[str, Any]:
     client = client or get_client()
-    payloads = [Workout.from_dict(w).to_intervals_payload() for w in workouts]
+
+    if not workouts:
+        raise ValueError("bulk_create_workouts called with empty workouts list")
+
+    payloads = []
+    skipped = []
+    for w in workouts:
+        try:
+            payloads.append(Workout.from_dict(w).to_intervals_payload())
+        except Exception as exc:
+            logger.warning("Skipping invalid workout %r: %s", w.get("title"), exc)
+            skipped.append({"title": w.get("title"), "error": str(exc)})
+
+    if not payloads:
+        raise ValueError("No valid workouts to create after validation")
+
     try:
         results = await client.bulk_create_events(payloads)
+        return {"ok": True, "count": len(results), "results": results, "skipped": skipped}
     except IntervalsAPIError as exc:
-        logger.error("Bulk create failed: %s", exc)
+        logger.error("Bulk create failed, falling back to sequential: %s", exc)
+        # Fall back to creating one at a time.
+        results = []
+        for payload in payloads:
+            try:
+                result = await client.create_event(payload)
+                results.append(result)
+            except IntervalsAPIError as inner_exc:
+                logger.error("Sequential create failed for %r: %s", payload.get("name"), inner_exc)
+                skipped.append({"title": payload.get("name"), "error": str(inner_exc)})
+        if results:
+            return {"ok": True, "count": len(results), "results": results, "skipped": skipped}
         raise
-    return {"ok": True, "count": len(results), "results": results}

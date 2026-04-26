@@ -18,6 +18,14 @@ LLM_JOBS = {
         "temperature": 0.7,
         "max_tokens": 2000,
     },
+    # Used for bulk workout / training block generation — needs gpt-4o to
+    # reliably produce a full week of structured workouts in one call.
+    "planning": {
+        "provider": "openai",
+        "model": "gpt-4o",
+        "temperature": 0.3,
+        "max_tokens": 4000,
+    },
     "executor": {
         "provider": "openai",
         "model": "gpt-4o-mini",

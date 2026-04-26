@@ -286,6 +286,10 @@ async def handle_tool_request(
         selected_tools = ["list_workouts"] + selected_tools
 
     # Build the schema list for only the selected tools.
+    # Use gpt-4o for bulk/planning — mini can't reliably generate a full week in one call.
+    needs_planning = any(t in selected_tools for t in ("bulk_create_workouts",))
+    job = "planning" if needs_planning else "executor"
+
     tools = [TOOL_SCHEMAS[t] for t in selected_tools if t in TOOL_SCHEMAS]
 
     # Append workout builder reference only for create/bulk operations.
@@ -309,7 +313,7 @@ async def handle_tool_request(
 
     for iteration in range(max_iterations):
         result = await llm.chat(
-            job="executor",
+            job=job,
             system=system,
             messages=messages,
             tools=tools,
@@ -356,6 +360,12 @@ async def _execute_tool(call: dict[str, Any], telegram_id: str) -> dict[str, Any
 
         if name == "bulk_create_workouts":
             workouts = args.get("workouts") or []
+            if not workouts:
+                # LLM sent empty array — ask it to try again with gpt-4o.
+                return {
+                    "result": {"ok": False, "error": "workouts array was empty — generate the full workout list and try again"},
+                    "summary": "⚠️ No workouts provided — please generate the full plan and retry.",
+                }
             res = await bulk_create_workouts(workouts)
             return {"result": res, "summary": f"✓ Created {res.get('count', len(workouts))} workouts."}
 
