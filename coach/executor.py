@@ -13,13 +13,15 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 from typing import Any
 
-from coach.context_builder import render_context_for_prompt
+from coach.context_builder import render_minimal_context_for_prompt
 from coach.llm_client import get_llm
 from config import settings
 from db.logs import log_event
 from db.profile import update_profile_fields
+from intervals.client import get_client
 from intervals.workouts import (
     bulk_create_workouts,
     create_workout_from_dict,
@@ -179,6 +181,52 @@ TOOLS: list[dict[str, Any]] = [
             "required": ["updates"],
         },
     },
+    # ── Lazy-fetch read tools ────────────────────────────────────────────────
+    # Call these only when you actually need the data. They cost an API round-
+    # trip so don't call them speculatively.
+    {
+        "name": "get_wellness",
+        "description": (
+            "Fetch detailed wellness data: full sleep breakdown, HRV, resting HR, "
+            "CTL, ATL, TSB, ramp rate, subjective scores. Call this when the athlete "
+            "asks about recovery, readiness, sleep, or fatigue in detail."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "days": {
+                    "type": "integer",
+                    "description": "Number of past days to include (default 1 = today only, max 7)",
+                }
+            },
+        },
+    },
+    {
+        "name": "get_recent_activities",
+        "description": (
+            "Fetch recent completed activities with TSS, duration, distance, pace/power. "
+            "Call this when the athlete asks about past training, load trends, or when "
+            "you need context about what they've done recently to plan something."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "days": {
+                    "type": "integer",
+                    "description": "How many days back to look (default 7, max 14)",
+                }
+            },
+        },
+    },
+    {
+        "name": "get_sport_settings",
+        "description": (
+            "Fetch the athlete's thresholds and training zones: FTP, LTHR, max HR, "
+            "threshold pace, power zones, HR zones, pace zones. Call this when building "
+            "a structured workout that needs exact zone boundaries."
+        ),
+        "input_schema": {"type": "object", "properties": {}},
+    },
 ]
 
 
@@ -198,17 +246,29 @@ async def handle_tool_request(
     Returns the final user-facing reply text.
     """
     tool_executor_prompt = settings.load_prompt("tool_executor")
-    workout_builder_prompt = settings.load_prompt("workout_builder")
     coach_personality = settings.load_prompt("coach_personality")
-    context_block = render_context_for_prompt(context)
+    context_block = render_minimal_context_for_prompt(context)
+
+    # Only include the full workout schema when the message involves building/creating.
+    # For edits/moves/deletes it's wasted tokens.
+    _CREATE_HINTS = re.compile(
+        r"\b(create|build|generate|add|new|design|write|make)\b", re.IGNORECASE
+    )
+    needs_builder = bool(_CREATE_HINTS.search(user_text))
+    workout_section = ""
+    if needs_builder:
+        workout_builder_prompt = settings.load_prompt("workout_builder")
+        workout_section = (
+            "\n\nWORKOUT BUILDING REFERENCE (for create_workout / bulk_create_workouts):\n"
+            + workout_builder_prompt.strip()
+        )
 
     system = (
         coach_personality.strip()
         + "\n\n"
         + tool_executor_prompt.strip()
-        + "\n\nWORKOUT BUILDING REFERENCE (for create_workout / bulk_create_workouts arguments):\n"
-        + workout_builder_prompt.strip()
-        + "\n\n──────── CONTEXT (refreshed on every message) ────────\n"
+        + workout_section
+        + "\n\n──────── CONTEXT ────────\n"
         + context_block
     )
 
@@ -313,6 +373,33 @@ async def _execute_tool(call: dict[str, Any], telegram_id: str) -> dict[str, Any
             )
             summary = f"✓ Profile updated: {', '.join(updates.keys())}."
             return {"result": {"ok": True, "fields": list(updates.keys())}, "summary": summary}
+
+        if name == "get_wellness":
+            from datetime import date, timedelta
+            days = min(int(args.get("days") or 1), 7)
+            client = get_client()
+            today = date.today().isoformat()
+            if days <= 1:
+                res = await client.get_wellness(today)
+            else:
+                oldest = (date.today() - timedelta(days=days)).isoformat()
+                res = await client.get_wellness_range(oldest, today)
+            return {"result": res, "summary": f"Wellness data fetched ({days} day(s))."}
+
+        if name == "get_recent_activities":
+            from datetime import date, timedelta
+            days = min(int(args.get("days") or 7), 14)
+            client = get_client()
+            oldest = (date.today() - timedelta(days=days)).isoformat()
+            today = date.today().isoformat()
+            res = await client.get_activities(oldest, today)
+            return {"result": res, "summary": f"Fetched {len(res)} activities over {days} days."}
+
+        if name == "get_sport_settings":
+            client = get_client()
+            athlete = await client.get_athlete()
+            sport_settings = (athlete or {}).get("sportSettings") or []
+            return {"result": sport_settings, "summary": "Sport settings fetched."}
 
         return {
             "result": {"ok": False, "error": f"unknown tool: {name}"},
