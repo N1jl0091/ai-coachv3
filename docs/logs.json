@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-26T15:44:46.564861+00:00",
+  "generated_at": "2026-04-26T17:45:54.148686+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-04-26T13:44:57.259782+00:00",
-  "total_events": 782,
+  "last_event_timestamp": "2026-04-26T15:46:04.830361+00:00",
+  "total_events": 787,
   "messages_per_day": {
     "2026-04-25": 16,
     "2026-04-26": 29
@@ -469,6 +469,74 @@
   "last_email_at": null,
   "recent_events": [
     {
+      "id": 787,
+      "timestamp": "2026-04-26T15:46:04.830361+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 786,
+      "timestamp": "2026-04-26T15:46:04.611563+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 785,
+      "timestamp": "2026-04-26T15:45:54.108413+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 784,
+      "timestamp": "2026-04-26T15:45:53.406126+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 783,
+      "timestamp": "2026-04-26T15:44:53.766965+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=782 intervals_ok=98.3% emails=0 errors=20)",
+      "metadata": {
+        "summary": "events=782 intervals_ok=98.3% emails=0 errors=20",
+        "commit_sha": "043b2e7ebf3a83346cf1686dc18e7f0898168bf1"
+      }
+    },
+    {
       "id": 782,
       "timestamp": "2026-04-26T13:44:57.259782+00:00",
       "event_type": "shutdown",
@@ -816,77 +884,6 @@
         "fields": [],
         "telegram_id": "8622052455"
       }
-    },
-    {
-      "id": 757,
-      "timestamp": "2026-04-26T10:03:48.688133+00:00",
-      "event_type": "llm_call",
-      "job": "executor",
-      "model_used": "gpt-4o-mini",
-      "latency_ms": 813,
-      "tokens_in": 2671,
-      "tokens_out": 10,
-      "severity": "info",
-      "message": "openai/gpt-4o-mini (executor)",
-      "metadata": {}
-    },
-    {
-      "id": 756,
-      "timestamp": "2026-04-26T10:03:47.849213+00:00",
-      "event_type": "profile_update",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Profile fields updated: []",
-      "metadata": {
-        "fields": [],
-        "telegram_id": "8622052455"
-      }
-    },
-    {
-      "id": 755,
-      "timestamp": "2026-04-26T10:03:47.793034+00:00",
-      "event_type": "llm_call",
-      "job": "executor",
-      "model_used": "gpt-4o-mini",
-      "latency_ms": 973,
-      "tokens_in": 2643,
-      "tokens_out": 10,
-      "severity": "info",
-      "message": "openai/gpt-4o-mini (executor)",
-      "metadata": {}
-    },
-    {
-      "id": 754,
-      "timestamp": "2026-04-26T10:03:46.794317+00:00",
-      "event_type": "profile_update",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Profile fields updated: []",
-      "metadata": {
-        "fields": [],
-        "telegram_id": "8622052455"
-      }
-    },
-    {
-      "id": 753,
-      "timestamp": "2026-04-26T10:03:46.729906+00:00",
-      "event_type": "llm_call",
-      "job": "executor",
-      "model_used": "gpt-4o-mini",
-      "latency_ms": 920,
-      "tokens_in": 2615,
-      "tokens_out": 10,
-      "severity": "info",
-      "message": "openai/gpt-4o-mini (executor)",
-      "metadata": {}
     }
   ]
 }
