@@ -1,39 +1,35 @@
 """
 Swappable LLM configuration.
-Touch one line to swap models.
 
-Current setup: all jobs on gpt-4o-mini (OpenAI, pay-as-you-go).
-Estimated cost for a personal coaching bot: ~$1-3/month.
+Balanced setup:
+  - reasoning: gpt-4o       — coaching quality matters here
+  - executor:  gpt-4o-mini  — structured tool calls, schemas do the work
+  - router:    gpt-4o-mini  — just classifies intent, 50 tokens
+  - analysis:  gpt-4o-mini  — fixed email format, fires once per run
 
-To upgrade analysis quality later:
-  "analysis": {"provider": "openai", "model": "gpt-4o-mini", ...}  ← current
-  "analysis": {"provider": "openai", "model": "gpt-5.4-mini", ...} ← upgrade
+Estimated cost: ~$1.50/month. $5 credit lasts ~3 months.
 """
 from __future__ import annotations
 
 LLM_JOBS = {
-    # Intent classification + tool pre-selection — must be fast and cheap.
-    "router": {
+    "reasoning": {
         "provider": "openai",
-        "model": "gpt-4o-mini",
-        "temperature": 0.0,
-        "max_tokens": 50,
+        "model": "gpt-4o",
+        "temperature": 0.7,
+        "max_tokens": 2000,
     },
-    # Calendar/profile tool calls — needs solid instruction following.
     "executor": {
         "provider": "openai",
         "model": "gpt-4o-mini",
         "temperature": 0.2,
         "max_tokens": 1500,
     },
-    # Open coaching conversations — personality and nuance.
-    "reasoning": {
+    "router": {
         "provider": "openai",
         "model": "gpt-4o-mini",
-        "temperature": 0.7,
-        "max_tokens": 2000,
+        "temperature": 0.0,
+        "max_tokens": 50,
     },
-    # Post-activity email — fires once per Strava upload.
     "analysis": {
         "provider": "openai",
         "model": "gpt-4o-mini",
