@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-26T11:42:22.093105+00:00",
+  "generated_at": "2026-04-26T13:43:41.499914+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-04-26T10:04:07.418531+00:00",
-  "total_events": 772,
+  "last_event_timestamp": "2026-04-26T11:43:49.255541+00:00",
+  "total_events": 777,
   "messages_per_day": {
     "2026-04-25": 16,
     "2026-04-26": 29
@@ -469,6 +469,74 @@
   "last_email_at": null,
   "recent_events": [
     {
+      "id": 777,
+      "timestamp": "2026-04-26T11:43:49.255541+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 776,
+      "timestamp": "2026-04-26T11:43:48.974715+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 775,
+      "timestamp": "2026-04-26T11:43:41.443328+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 774,
+      "timestamp": "2026-04-26T11:43:40.747614+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 773,
+      "timestamp": "2026-04-26T11:42:29.743386+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=772 intervals_ok=98.3% emails=0 errors=20)",
+      "metadata": {
+        "summary": "events=772 intervals_ok=98.3% emails=0 errors=20",
+        "commit_sha": "076f89db8f72b51102baefc1e6c9ecf1b505fcf0"
+      }
+    },
+    {
       "id": 772,
       "timestamp": "2026-04-26T10:04:07.418531+00:00",
       "event_type": "message_out",
@@ -816,83 +884,6 @@
       "severity": "info",
       "message": "GET /athlete/i564128/wellness/2026-04-26",
       "metadata": {}
-    },
-    {
-      "id": 747,
-      "timestamp": "2026-04-26T10:03:43.754723+00:00",
-      "event_type": "message_in",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "intent=tool: For strength training tomorrow I have the workout: 12:03 =\n!!!\n84\nMONDAY - CHEST FOCUS\nWORKOUT\n\nEXERCISES\n\nSETS\n\nBARBELL",
-      "metadata": {
-        "intent": "tool",
-        "telegram_id": "8622052455"
-      }
-    },
-    {
-      "id": 746,
-      "timestamp": "2026-04-26T10:01:50.745681+00:00",
-      "event_type": "message_out",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Replied to chat 8622052455 (170 chars)",
-      "metadata": {
-        "chat_id": "8622052455",
-        "reply_len": 170
-      }
-    },
-    {
-      "id": 745,
-      "timestamp": "2026-04-26T10:01:50.212285+00:00",
-      "event_type": "llm_call",
-      "job": "executor",
-      "model_used": "gpt-4o-mini",
-      "latency_ms": 1789,
-      "tokens_in": 4336,
-      "tokens_out": 37,
-      "severity": "info",
-      "message": "openai/gpt-4o-mini (executor)",
-      "metadata": {}
-    },
-    {
-      "id": 744,
-      "timestamp": "2026-04-26T10:01:48.403958+00:00",
-      "event_type": "intervals_write",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Created event 'Half-Marathon Race' on 2026-05-03T00:00:00",
-      "metadata": {
-        "event_id": 106538553,
-        "event_name": "Half-Marathon Race"
-      }
-    },
-    {
-      "id": 743,
-      "timestamp": "2026-04-26T10:01:48.069363+00:00",
-      "event_type": "intervals_write",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Created event 'Soccer Tournament Day 3' on 2026-05-02T00:00:00",
-      "metadata": {
-        "event_id": 106538551,
-        "event_name": "Soccer Tournament Day 3"
-      }
     }
   ]
 }
