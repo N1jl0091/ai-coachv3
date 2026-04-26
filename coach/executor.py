@@ -209,12 +209,11 @@ _TOOL_PATTERNS: list[tuple[re.Pattern, list[str]]] = [
 # Every token here is paid on EVERY executor call — keep it minimal.
 
 _EXECUTOR_SYSTEM = """\
-Coaching assistant. Act immediately, confirm with ✓ in one sentence.
-- Running: use pace_zone targets (Z1 Pace…Z5 Pace). Never ftp_percent for runs.
-- Cycling: use ftp_percent or zone.
+Coaching assistant. Act immediately, confirm with ✓ in one sentence. Plain text only — no markdown, no bullet points, no bold.
+- Running steps: use target_type="pace" (seconds/km) for efforts, target_type="pace_zone" for easy/recovery. NEVER ftp_percent or power for running.
+- Repeat blocks: set the SAME repeat integer on EVERY step in the block (interval AND rest). If 4×800m with rest, both steps get repeat=4.
 - If event_id unknown, call list_workouts first.
-- Resolve relative dates to ISO from the datetime in context.
-- steps array on update_workout replaces the full workout structure."""
+- Resolve relative dates to ISO from the datetime in context."""
 
 
 # ── Tool selector ──────────────────────────────────────────────────────────
