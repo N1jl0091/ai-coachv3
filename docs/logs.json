@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-26T03:25:37.284739+00:00",
+  "generated_at": "2026-04-26T05:26:44.426231+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-04-26T01:25:46.705799+00:00",
-  "total_events": 395,
+  "last_event_timestamp": "2026-04-26T05:26:44.138942+00:00",
+  "total_events": 401,
   "messages_per_day": {
     "2026-04-25": 16
   },
@@ -22,7 +22,7 @@
     "2026-04-25": 22444
   },
   "intervals_success_rate": 98.3,
-  "intervals_total": 118,
+  "intervals_total": 119,
   "intervals_failed": 2,
   "recent_errors": [
     {
@@ -453,6 +453,87 @@
   "last_email_at": null,
   "recent_events": [
     {
+      "id": 401,
+      "timestamp": "2026-04-26T05:26:44.138942+00:00",
+      "event_type": "intervals_read",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 508,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "GET /athlete/i564128/wellness/2026-04-26",
+      "metadata": {}
+    },
+    {
+      "id": 400,
+      "timestamp": "2026-04-26T03:26:55.031339+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 399,
+      "timestamp": "2026-04-26T03:26:54.798139+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 398,
+      "timestamp": "2026-04-26T03:26:44.295319+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 397,
+      "timestamp": "2026-04-26T03:26:43.586883+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 396,
+      "timestamp": "2026-04-26T03:25:45.313970+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=395 intervals_ok=98.3% emails=0 errors=20)",
+      "metadata": {
+        "summary": "events=395 intervals_ok=98.3% emails=0 errors=20",
+        "commit_sha": "20f4317792a531291c5ec5e387cc8bba8db68092"
+      }
+    },
+    {
       "id": 395,
       "timestamp": "2026-04-26T01:25:46.705799+00:00",
       "event_type": "shutdown",
@@ -777,162 +858,6 @@
       "severity": "info",
       "message": "GET /athlete/i564128/wellness/2026-04-25",
       "metadata": {}
-    },
-    {
-      "id": 371,
-      "timestamp": "2026-04-25T19:22:30.667632+00:00",
-      "event_type": "shutdown",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "ai-coach stopped",
-      "metadata": {}
-    },
-    {
-      "id": 370,
-      "timestamp": "2026-04-25T19:22:30.433188+00:00",
-      "event_type": "system",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Telegram bot stopped",
-      "metadata": {}
-    },
-    {
-      "id": 369,
-      "timestamp": "2026-04-25T19:22:22.946572+00:00",
-      "event_type": "system",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Telegram bot polling started",
-      "metadata": {}
-    },
-    {
-      "id": 368,
-      "timestamp": "2026-04-25T19:22:22.263333+00:00",
-      "event_type": "startup",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "ai-coach booting",
-      "metadata": {}
-    },
-    {
-      "id": 367,
-      "timestamp": "2026-04-25T19:10:39.980146+00:00",
-      "event_type": "error",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "llm_error: groq call failed: Error code: 400 - {'error': {'message': \"'messages.3' : discriminator property 'role' has invalid value\", 'type': 'invalid_request_error'}}",
-      "metadata": {
-        "handler": "on_message"
-      }
-    },
-    {
-      "id": 366,
-      "timestamp": "2026-04-25T19:10:39.371871+00:00",
-      "event_type": "error",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "Tool update_workout raised: [422] PUT /athlete/i564128/events/106442376 failed with 422: {\"status\":422,\"error\":\"Invalid start date: java.time.format.DateTimeParseException: Text '2026-04-26' could not be parsed at index 10\"}",
-      "metadata": {
-        "args": {
-          "updates": {
-            "date": "2026-04-26",
-            "tags": [
-              "tempo",
-              "marathon training"
-            ],
-            "color": "#FF9800",
-            "steps": [
-              {
-                "ramp": false,
-                "type": "warmup",
-                "zone": 2,
-                "notes": "Easy warm-up",
-                "repeat": 1,
-                "target_low": 50,
-                "cadence_low": null,
-                "target_high": 60,
-                "target_type": "ftp_percent",
-                "cadence_high": null,
-                "distance_meters": 2000,
-                "duration_seconds": 600
-              },
-              {
-                "ramp": false,
-                "type": "interval",
-                "zone": 4,
-                "notes": "Tempo effort",
-                "repeat": 4,
-                "target_low": 80,
-                "cadence_low": null,
-                "target_high": 90,
-                "target_type": "ftp_percent",
-                "cadence_high": null,
-                "distance_meters": 1000,
-                "duration_seconds": 300
-              },
-              {
-                "ramp": false,
-                "type": "rest",
-                "zone": 1,
-                "notes": "Slow recovery",
-                "repeat": 4,
-                "target_low": 50,
-                "cadence_low": null,
-                "target_high": 60,
-                "target_type": "ftp_percent",
-                "cadence_high": null,
-                "distance_meters": null,
-                "duration_seconds": 180
-              },
-              {
-                "ramp": false,
-                "type": "cooldown",
-                "zone": 2,
-                "notes": "Easy cool-down",
-                "repeat": 1,
-                "target_low": 50,
-                "cadence_low": null,
-                "target_high": 60,
-                "target_type": "ftp_percent",
-                "cadence_high": null,
-                "distance_meters": 2000,
-                "duration_seconds": 600
-              }
-            ],
-            "title": "Tempo Run with Structured Intervals",
-            "gym_sets": [],
-            "description": "Tempo training for marathon with short bits and slower recovery",
-            "planned_tss": 70,
-            "planned_duration_seconds": 4800
-          },
-          "event_id": 106442376
-        },
-        "tool": "update_workout"
-      }
     }
   ]
 }
