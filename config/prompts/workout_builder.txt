@@ -44,6 +44,26 @@ Every workout you produce conforms exactly to this schema:
 
 TARGET TYPES (target_type field)
 ---------------------------------
+SPORT-SPECIFIC RULES — follow these strictly:
+
+RUNNING (Run, TrailRun, VirtualRun):
+  → default to pace_zone (Z1, Z2 Pace etc.)
+  → use pace (seconds/km) when an exact pace is specified
+  → use hr_zone if athlete has no pace data or requests HR
+  → NEVER use ftp_percent or power — running has no power FTP
+
+CYCLING (Ride, VirtualRide, GravelRide, MountainBikeRide etc.):
+  → default to ftp_percent (e.g. 80-90%)
+  → use power (watts) when exact wattage requested
+  → use zone for zone-based efforts (Z2)
+
+SWIMMING (Swim, OpenWaterSwim):
+  → use pace_zone or pace (target in seconds per 100m)
+  → NEVER use ftp_percent or power
+
+ALL SPORTS: hr_zone / hr_percent / lthr_percent always valid as alternative.
+
+Available values:
 ftp_percent   → % of FTP. target_low=80, target_high=90 → "80-90%". Use for most bike/run intensity.
 power         → absolute watts. target_low=250 → "250w". Only when athlete's exact FTP is known.
 zone          → power zone. zone=2 → "Z2". Use when the athlete says "zone 2 ride" etc.
