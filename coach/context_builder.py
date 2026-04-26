@@ -213,61 +213,54 @@ def render_context_for_prompt(context: dict[str, Any]) -> str:
 
 def render_minimal_context_for_prompt(context: dict[str, Any]) -> str:
     """
-    Compact render for the executor — omits activity history (use tool instead).
+    Ultra-compact context for the executor — target under 100 tokens.
+    Key-value pairs, no prose, no filler.
     """
-    lines: list[str] = []
-    lines.append(f"Current datetime: {context.get('now')}")
+    parts: list[str] = []
+
+    parts.append(context.get("now") or "")
 
     profile = context.get("profile") or {}
     if profile:
-        sports = ", ".join(profile.get("sports") or []) or "—"
+        sports = "+".join(profile.get("sports") or []) or "—"
+        goal = f"{profile.get('goal_event') or '—'} {profile.get('goal_date') or ''} ({profile.get('goal_time_target') or '—'})"
         injuries = ", ".join(profile.get("current_injuries") or []) or "none"
-        lines.append("")
-        lines.append("ATHLETE:")
-        lines.append(
-            f"  {profile.get('name') or '—'} | {sports} | "
-            f"Goal: {profile.get('goal_event') or '—'} {profile.get('goal_date') or ''} "
-            f"(target {profile.get('goal_time_target') or '—'})"
+        parts.append(
+            f"{profile.get('name') or '—'} | {sports} | {profile.get('experience_level') or '—'}\n"
+            f"Goal: {goal} | Injuries: {injuries}"
         )
-        lines.append(f"  Injuries: {injuries} | Experience: {profile.get('experience_level') or '—'}")
         if profile.get("notes"):
-            lines.append(f"  Notes: {profile.get('notes')}")
+            parts.append(f"Notes: {profile['notes']}")
 
     today = context.get("today_wellness") or {}
     if today:
         ctl = today.get("ctl")
         atl = today.get("atl")
         tsb = round((ctl or 0) - (atl or 0), 1) if ctl is not None and atl is not None else None
-        lines.append(
-            f"TODAY: CTL={ctl} ATL={atl} TSB={tsb}"
-            f" HRV={today.get('hrv')} restHR={today.get('restingHR')}"
-        )
+        parts.append(f"CTL={ctl} ATL={atl} TSB={tsb} HRV={today.get('hrv')} restHR={today.get('restingHR')}")
 
     planned = context.get("planned_14d") or []
     if planned:
-        lines.append("")
-        lines.append("PLANNED CALENDAR:")
+        cal_lines = ["PLAN:"]
         for e in planned[:14]:
-            mins = round((e.get("moving_time") or 0) / 60)
-            lines.append(
-                f"  {e.get('start_date_local','')[:10]} {(e.get('type') or ''):>4}"
-                f" — {e.get('name')} ({mins}min)"
-                f"  [id={e.get('id')}]"
-            )
+            date_str = (e.get("start_date_local") or "")[:10]
+            sport = (e.get("type") or "")
+            cal_lines.append(f"  {date_str} {sport} — {e.get('name')} [id={e.get('id')}]")
+        parts.append("\n".join(cal_lines))
 
     athlete = context.get("athlete_intervals") or {}
     sport_settings = athlete.get("sportSettings") or []
     if sport_settings:
-        lines.append("")
-        lines.append("THRESHOLDS:")
+        thresh_lines = ["THRESH:"]
         for s in sport_settings:
             types = "/".join(s.get("types") or [])
-            lines.append(
-                f"  {types}: FTP={s.get('ftp')} LTHR={s.get('lthr')}"
-                f" maxHR={s.get('max_hr')} threshPace={s.get('threshold_pace')}"
+            thresh_lines.append(
+                f"  {types}: FTP={s.get('ftp')} LTHR={s.get('lthr')} "
+                f"maxHR={s.get('max_hr')} threshPace={s.get('threshold_pace')}"
             )
+        parts.append("\n".join(thresh_lines))
 
-    return "\n".join(lines)
+    return "\n".join(p for p in parts if p)
 
 
 def _empty_profile() -> Any:

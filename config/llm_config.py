@@ -1,50 +1,55 @@
 """
 Swappable LLM configuration.
+Touch one line to swap models.
 
-Three named jobs map to provider+model. Touch one line to swap models.
+Current setup: all jobs on gpt-4o-mini (OpenAI, pay-as-you-go).
+Estimated cost for a personal coaching bot: ~$1-3/month.
+
+To upgrade analysis quality later:
+  "analysis": {"provider": "openai", "model": "gpt-4o-mini", ...}  ← current
+  "analysis": {"provider": "openai", "model": "gpt-5.4-mini", ...} ← upgrade
 """
-
 from __future__ import annotations
 
 LLM_JOBS = {
-    "reasoning": {
-        "provider": "groq",
-        "model": "llama-3.1-8b-instant",
-        "temperature": 0.7,
-        "max_tokens": 2000,
+    # Intent classification + tool pre-selection — must be fast and cheap.
+    "router": {
+        "provider": "openai",
+        "model": "gpt-4o-mini",
+        "temperature": 0.0,
+        "max_tokens": 50,
     },
+    # Calendar/profile tool calls — needs solid instruction following.
     "executor": {
-        "provider": "groq",
-        "model": "llama-3.3-70b-versatile",
+        "provider": "openai",
+        "model": "gpt-4o-mini",
         "temperature": 0.2,
         "max_tokens": 1500,
     },
+    # Open coaching conversations — personality and nuance.
+    "reasoning": {
+        "provider": "openai",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "max_tokens": 2000,
+    },
+    # Post-activity email — fires once per Strava upload.
     "analysis": {
-        "provider": "groq",
-        "model": "llama-3.3-70b-versatile",
+        "provider": "openai",
+        "model": "gpt-4o-mini",
         "temperature": 0.6,
         "max_tokens": 1500,
     },
-    "router": {
-        "provider": "groq",
-        "model": "llama-3.1-8b-instant",
-        "temperature": 0.0,
-        "max_tokens": 50,
-    }
 }
-# Provider base URLs (Anthropic + OpenAI use SDK defaults; Groq/Ollama are OpenAI-compatible).
+
 PROVIDER_URLS: dict[str, str] = {
     "anthropic": "https://api.anthropic.com",
-    "openai": "https://api.openai.com/v1",
-    "groq": "https://api.groq.com/openai/v1",
-    "ollama": "http://localhost:11434/v1",   # overridden by OLLAMA_BASE_URL env
+    "openai":    "https://api.openai.com/v1",
+    "groq":      "https://api.groq.com/openai/v1",
+    "ollama":    "http://localhost:11434/v1",
 }
 
-
 def get_job(job: str) -> dict:
-    """Return the config dict for a named job. Raises if the job isn't defined."""
     if job not in LLM_JOBS:
-        raise KeyError(
-            f"Unknown LLM job: {job!r}. Defined jobs: {list(LLM_JOBS.keys())}"
-        )
+        raise KeyError(f"Unknown LLM job: {job!r}. Defined: {list(LLM_JOBS.keys())}")
     return LLM_JOBS[job]
