@@ -1,32 +1,152 @@
 {
-  "generated_at": "2026-04-26T09:07:59.551681+00:00",
+  "generated_at": "2026-04-26T11:42:22.093105+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-04-26T08:59:09.965435+00:00",
-  "total_events": 650,
+  "last_event_timestamp": "2026-04-26T10:04:07.418531+00:00",
+  "total_events": 772,
   "messages_per_day": {
     "2026-04-25": 16,
-    "2026-04-26": 21
+    "2026-04-26": 29
   },
   "llm_calls_by_job": {
-    "reasoning": 17,
-    "router": 19,
-    "executor": 19,
+    "reasoning": 19,
+    "router": 21,
+    "executor": 39,
+    "planning": 3,
     "analysis": 1
   },
   "avg_latency_by_job": {
-    "reasoning": 1066,
-    "router": 713,
-    "executor": 1929,
+    "reasoning": 1049,
+    "router": 709,
+    "executor": 2286,
+    "planning": 3019,
     "analysis": 1577
   },
   "tokens_per_day": {
     "2026-04-25": 22444,
-    "2026-04-26": 70382
+    "2026-04-26": 131600
   },
-  "intervals_success_rate": 99.2,
-  "intervals_total": 244,
-  "intervals_failed": 2,
+  "intervals_success_rate": 98.3,
+  "intervals_total": 296,
+  "intervals_failed": 5,
   "recent_errors": [
+    {
+      "id": 711,
+      "timestamp": "2026-04-26T09:33:54.537780+00:00",
+      "event_type": "error",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "error",
+      "message": "Tool bulk_create_workouts raised: [422] POST /athlete/i564128/events/bulk failed with 422: {\"status\":422,\"error\":\"At least one event required\"}",
+      "metadata": {
+        "args": {},
+        "tool": "bulk_create_workouts"
+      }
+    },
+    {
+      "id": 710,
+      "timestamp": "2026-04-26T09:33:54.521049+00:00",
+      "event_type": "intervals_write",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 183,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "error",
+      "message": "POST /athlete/i564128/events/bulk \u2192 422: {\"status\":422,\"error\":\"At least one event required\"}",
+      "metadata": {}
+    },
+    {
+      "id": 707,
+      "timestamp": "2026-04-26T09:33:50.882656+00:00",
+      "event_type": "error",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "error",
+      "message": "Tool bulk_create_workouts raised: [422] POST /athlete/i564128/events/bulk failed with 422: {\"status\":422,\"error\":\"At least one event required\"}",
+      "metadata": {
+        "args": {},
+        "tool": "bulk_create_workouts"
+      }
+    },
+    {
+      "id": 706,
+      "timestamp": "2026-04-26T09:33:50.856062+00:00",
+      "event_type": "intervals_write",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 547,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "error",
+      "message": "POST /athlete/i564128/events/bulk \u2192 422: {\"status\":422,\"error\":\"At least one event required\"}",
+      "metadata": {}
+    },
+    {
+      "id": 702,
+      "timestamp": "2026-04-26T09:33:41.181997+00:00",
+      "event_type": "error",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "error",
+      "message": "Tool bulk_create_workouts raised: [422] POST /athlete/i564128/events/bulk failed with 422: {\"status\":422,\"error\":\"At least one event required\"}",
+      "metadata": {
+        "args": {},
+        "tool": "bulk_create_workouts"
+      }
+    },
+    {
+      "id": 701,
+      "timestamp": "2026-04-26T09:33:41.158109+00:00",
+      "event_type": "intervals_write",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 194,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "error",
+      "message": "POST /athlete/i564128/events/bulk \u2192 422: {\"status\":422,\"error\":\"At least one event required\"}",
+      "metadata": {}
+    },
+    {
+      "id": 673,
+      "timestamp": "2026-04-26T09:30:59.093296+00:00",
+      "event_type": "error",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "error",
+      "message": "Tool create_workout raised: Endurance workouts must have at least one WorkoutStep.",
+      "metadata": {
+        "args": {
+          "date": "2026-05-03",
+          "tags": [
+            "race",
+            "10km",
+            "trail"
+          ],
+          "color": "#2196F3",
+          "sport": "TrailRun",
+          "steps": [],
+          "title": "10km Steep Trail Run",
+          "gym_sets": [],
+          "description": "Upcoming race on a steep trail, focusing on endurance and strength.",
+          "planned_tss": 0,
+          "planned_duration_seconds": 0
+        },
+        "tool": "create_workout"
+      }
+    },
     {
       "id": 491,
       "timestamp": "2026-04-26T06:16:26.586848+00:00",
@@ -343,118 +463,14 @@
         },
         "tool": "create_workout"
       }
-    },
-    {
-      "id": 168,
-      "timestamp": "2026-04-25T15:10:30.002499+00:00",
-      "event_type": "intervals_write",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 191,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "POST /athlete/i564128/events \u2192 422: {\"status\":422,\"error\":\"Invalid start date: java.time.format.DateTimeParseException: Text '2026-04-26' could not be parsed at index 10\"}",
-      "metadata": {}
-    },
-    {
-      "id": 62,
-      "timestamp": "2026-04-25T14:55:38.313142+00:00",
-      "event_type": "error",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "llm_error: ANTHROPIC_API_KEY is not set",
-      "metadata": {
-        "handler": "on_message"
-      }
-    },
-    {
-      "id": 55,
-      "timestamp": "2026-04-25T14:55:30.705446+00:00",
-      "event_type": "error",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "llm_error: ANTHROPIC_API_KEY is not set",
-      "metadata": {
-        "handler": "on_message"
-      }
-    },
-    {
-      "id": 48,
-      "timestamp": "2026-04-25T14:55:20.093670+00:00",
-      "event_type": "error",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "llm_error: ANTHROPIC_API_KEY is not set",
-      "metadata": {
-        "handler": "on_message"
-      }
-    },
-    {
-      "id": 37,
-      "timestamp": "2026-04-25T14:54:17.054454+00:00",
-      "event_type": "error",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "llm_error: ANTHROPIC_API_KEY is not set",
-      "metadata": {
-        "handler": "on_message"
-      }
-    },
-    {
-      "id": 29,
-      "timestamp": "2026-04-25T14:53:44.333392+00:00",
-      "event_type": "error",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "llm_error: ANTHROPIC_API_KEY is not set",
-      "metadata": {
-        "handler": "on_message"
-      }
-    },
-    {
-      "id": 12,
-      "timestamp": "2026-04-25T14:50:45.133797+00:00",
-      "event_type": "dashboard_push_failed",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "Dashboard push failed: 422 {\"message\": \"Update is not a fast forward\", \"documentation_url\": \"https://docs.github.com/rest/git/refs#update-a-reference\", \"status\": \"422\"}",
-      "metadata": {
-        "ok": false,
-        "error": "422 {\"message\": \"Update is not a fast forward\", \"documentation_url\": \"https://docs.github.com/rest/git/refs#update-a-reference\", \"status\": \"422\"}"
-      }
     }
   ],
   "email_count": 0,
   "last_email_at": null,
   "recent_events": [
     {
-      "id": 650,
-      "timestamp": "2026-04-26T08:59:09.965435+00:00",
+      "id": 772,
+      "timestamp": "2026-04-26T10:04:07.418531+00:00",
       "event_type": "message_out",
       "job": "system",
       "model_used": null,
@@ -462,151 +478,28 @@
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
-      "message": "Replied to chat 8622052455 (254 chars)",
+      "message": "Replied to chat 8622052455 (202 chars)",
       "metadata": {
         "chat_id": "8622052455",
-        "reply_len": 254
+        "reply_len": 202
       }
     },
     {
-      "id": 649,
-      "timestamp": "2026-04-26T08:59:09.420747+00:00",
+      "id": 771,
+      "timestamp": "2026-04-26T10:04:06.879233+00:00",
       "event_type": "llm_call",
       "job": "reasoning",
-      "model_used": "gpt-4o-mini",
-      "latency_ms": 1836,
-      "tokens_in": 1516,
-      "tokens_out": 62,
+      "model_used": "gpt-4o",
+      "latency_ms": 1031,
+      "tokens_in": 2524,
+      "tokens_out": 38,
       "severity": "info",
-      "message": "openai/gpt-4o-mini (reasoning)",
+      "message": "openai/gpt-4o (reasoning)",
       "metadata": {}
     },
     {
-      "id": 648,
-      "timestamp": "2026-04-26T08:59:07.561191+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 506,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128",
-      "metadata": {}
-    },
-    {
-      "id": 647,
-      "timestamp": "2026-04-26T08:59:07.560994+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 506,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/events",
-      "metadata": {}
-    },
-    {
-      "id": 645,
-      "timestamp": "2026-04-26T08:59:07.560604+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 506,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/wellness/2026-04-26",
-      "metadata": {}
-    },
-    {
-      "id": 646,
-      "timestamp": "2026-04-26T08:59:07.560376+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 507,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/activities",
-      "metadata": {}
-    },
-    {
-      "id": 644,
-      "timestamp": "2026-04-26T08:59:07.556405+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 502,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/wellness",
-      "metadata": {}
-    },
-    {
-      "id": 643,
-      "timestamp": "2026-04-26T08:59:07.016427+00:00",
-      "event_type": "message_in",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "intent=chat: What is planned for the next few days",
-      "metadata": {
-        "intent": "chat",
-        "telegram_id": "8622052455"
-      }
-    },
-    {
-      "id": 642,
-      "timestamp": "2026-04-26T08:59:06.992529+00:00",
-      "event_type": "llm_call",
-      "job": "router",
-      "model_used": "gpt-4o-mini",
-      "latency_ms": 841,
-      "tokens_in": 180,
-      "tokens_out": 1,
-      "severity": "info",
-      "message": "openai/gpt-4o-mini (router)",
-      "metadata": {}
-    },
-    {
-      "id": 641,
-      "timestamp": "2026-04-26T08:58:29.519903+00:00",
-      "event_type": "message_out",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Replied to chat 8622052455 (165 chars)",
-      "metadata": {
-        "chat_id": "8622052455",
-        "reply_len": 165
-      }
-    },
-    {
-      "id": 640,
-      "timestamp": "2026-04-26T08:58:28.977722+00:00",
-      "event_type": "llm_call",
-      "job": "reasoning",
-      "model_used": "gpt-4o-mini",
-      "latency_ms": 1208,
-      "tokens_in": 1469,
-      "tokens_out": 33,
-      "severity": "info",
-      "message": "openai/gpt-4o-mini (reasoning)",
-      "metadata": {}
-    },
-    {
-      "id": 637,
-      "timestamp": "2026-04-26T08:58:27.747128+00:00",
+      "id": 770,
+      "timestamp": "2026-04-26T10:04:05.822322+00:00",
       "event_type": "intervals_read",
       "job": "system",
       "model_used": null,
@@ -618,118 +511,8 @@
       "metadata": {}
     },
     {
-      "id": 638,
-      "timestamp": "2026-04-26T08:58:27.746763+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 504,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/wellness",
-      "metadata": {}
-    },
-    {
-      "id": 639,
-      "timestamp": "2026-04-26T08:58:27.746312+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 500,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128",
-      "metadata": {}
-    },
-    {
-      "id": 636,
-      "timestamp": "2026-04-26T08:58:27.745308+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 496,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/activities",
-      "metadata": {}
-    },
-    {
-      "id": 635,
-      "timestamp": "2026-04-26T08:58:27.744987+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 501,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/wellness/2026-04-26",
-      "metadata": {}
-    },
-    {
-      "id": 634,
-      "timestamp": "2026-04-26T08:58:27.221922+00:00",
-      "event_type": "message_in",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "intent=chat: Yes, can you pull that data from intervals?",
-      "metadata": {
-        "intent": "chat",
-        "telegram_id": "8622052455"
-      }
-    },
-    {
-      "id": 633,
-      "timestamp": "2026-04-26T08:58:27.200517+00:00",
-      "event_type": "llm_call",
-      "job": "router",
-      "model_used": "gpt-4o-mini",
-      "latency_ms": 861,
-      "tokens_in": 182,
-      "tokens_out": 1,
-      "severity": "info",
-      "message": "openai/gpt-4o-mini (router)",
-      "metadata": {}
-    },
-    {
-      "id": 632,
-      "timestamp": "2026-04-26T08:58:05.781221+00:00",
-      "event_type": "message_out",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Replied to chat 8622052455 (390 chars)",
-      "metadata": {
-        "chat_id": "8622052455",
-        "reply_len": 390
-      }
-    },
-    {
-      "id": 631,
-      "timestamp": "2026-04-26T08:58:05.235843+00:00",
-      "event_type": "llm_call",
-      "job": "reasoning",
-      "model_used": "gpt-4o-mini",
-      "latency_ms": 2204,
-      "tokens_in": 1369,
-      "tokens_out": 91,
-      "severity": "info",
-      "message": "openai/gpt-4o-mini (reasoning)",
-      "metadata": {}
-    },
-    {
-      "id": 630,
-      "timestamp": "2026-04-26T08:58:03.006771+00:00",
+      "id": 769,
+      "timestamp": "2026-04-26T10:04:05.818202+00:00",
       "event_type": "intervals_read",
       "job": "system",
       "model_used": null,
@@ -737,16 +520,29 @@
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
+      "message": "GET /athlete/i564128/activities",
+      "metadata": {}
+    },
+    {
+      "id": 768,
+      "timestamp": "2026-04-26T10:04:05.584623+00:00",
+      "event_type": "intervals_read",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 500,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
       "message": "GET /athlete/i564128/wellness",
       "metadata": {}
     },
     {
-      "id": 628,
-      "timestamp": "2026-04-26T08:58:03.005756+00:00",
+      "id": 767,
+      "timestamp": "2026-04-26T10:04:05.583676+00:00",
       "event_type": "intervals_read",
       "job": "system",
       "model_used": null,
-      "latency_ms": 504,
+      "latency_ms": 503,
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
@@ -754,12 +550,12 @@
       "metadata": {}
     },
     {
-      "id": 629,
-      "timestamp": "2026-04-26T08:58:03.005269+00:00",
+      "id": 766,
+      "timestamp": "2026-04-26T10:04:05.577932+00:00",
       "event_type": "intervals_read",
       "job": "system",
       "model_used": null,
-      "latency_ms": 501,
+      "latency_ms": 492,
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
@@ -767,34 +563,8 @@
       "metadata": {}
     },
     {
-      "id": 627,
-      "timestamp": "2026-04-26T08:58:02.999787+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 495,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/events",
-      "metadata": {}
-    },
-    {
-      "id": 626,
-      "timestamp": "2026-04-26T08:58:02.992642+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 488,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/activities",
-      "metadata": {}
-    },
-    {
-      "id": 625,
-      "timestamp": "2026-04-26T08:58:02.482655+00:00",
+      "id": 765,
+      "timestamp": "2026-04-26T10:04:05.056257+00:00",
       "event_type": "message_in",
       "job": "system",
       "model_used": null,
@@ -802,59 +572,28 @@
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
-      "message": "intent=chat: Please review the 1st run ( which is the 6km one) in more detail",
+      "message": "intent=chat: Profile or intervals.icu?",
       "metadata": {
         "intent": "chat",
         "telegram_id": "8622052455"
       }
     },
     {
-      "id": 624,
-      "timestamp": "2026-04-26T08:58:02.460536+00:00",
+      "id": 764,
+      "timestamp": "2026-04-26T10:04:05.036403+00:00",
       "event_type": "llm_call",
       "job": "router",
       "model_used": "gpt-4o-mini",
-      "latency_ms": 896,
-      "tokens_in": 191,
+      "latency_ms": 770,
+      "tokens_in": 178,
       "tokens_out": 1,
       "severity": "info",
       "message": "openai/gpt-4o-mini (router)",
       "metadata": {}
     },
     {
-      "id": 623,
-      "timestamp": "2026-04-26T08:57:46.208727+00:00",
-      "event_type": "activity_analysis_done",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "warning",
-      "message": "Activity 18261734228 analysis: False",
-      "metadata": {
-        "ok": false,
-        "reason": "intervals_sync_timeout"
-      }
-    },
-    {
-      "id": 622,
-      "timestamp": "2026-04-26T08:57:46.187420+00:00",
-      "event_type": "intervals_sync",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "warning",
-      "message": "Activity 18261734228 never synced to Intervals after polling",
-      "metadata": {
-        "activity_id": "18261734228"
-      }
-    },
-    {
-      "id": 621,
-      "timestamp": "2026-04-26T08:57:28.905783+00:00",
+      "id": 763,
+      "timestamp": "2026-04-26T10:03:51.993044+00:00",
       "event_type": "message_out",
       "job": "system",
       "model_used": null,
@@ -862,10 +601,297 @@
       "tokens_in": null,
       "tokens_out": null,
       "severity": "info",
-      "message": "Replied to chat 8622052455 (245 chars)",
+      "message": "Replied to chat 8622052455 (20 chars)",
       "metadata": {
         "chat_id": "8622052455",
-        "reply_len": 245
+        "reply_len": 20
+      }
+    },
+    {
+      "id": 762,
+      "timestamp": "2026-04-26T10:03:51.400989+00:00",
+      "event_type": "profile_update",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Profile fields updated: []",
+      "metadata": {
+        "fields": [],
+        "telegram_id": "8622052455"
+      }
+    },
+    {
+      "id": 761,
+      "timestamp": "2026-04-26T10:03:51.356363+00:00",
+      "event_type": "llm_call",
+      "job": "executor",
+      "model_used": "gpt-4o-mini",
+      "latency_ms": 901,
+      "tokens_in": 2727,
+      "tokens_out": 10,
+      "severity": "info",
+      "message": "openai/gpt-4o-mini (executor)",
+      "metadata": {}
+    },
+    {
+      "id": 760,
+      "timestamp": "2026-04-26T10:03:50.437094+00:00",
+      "event_type": "profile_update",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Profile fields updated: []",
+      "metadata": {
+        "fields": [],
+        "telegram_id": "8622052455"
+      }
+    },
+    {
+      "id": 759,
+      "timestamp": "2026-04-26T10:03:50.396523+00:00",
+      "event_type": "llm_call",
+      "job": "executor",
+      "model_used": "gpt-4o-mini",
+      "latency_ms": 1631,
+      "tokens_in": 2699,
+      "tokens_out": 10,
+      "severity": "info",
+      "message": "openai/gpt-4o-mini (executor)",
+      "metadata": {}
+    },
+    {
+      "id": 758,
+      "timestamp": "2026-04-26T10:03:48.745777+00:00",
+      "event_type": "profile_update",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Profile fields updated: []",
+      "metadata": {
+        "fields": [],
+        "telegram_id": "8622052455"
+      }
+    },
+    {
+      "id": 757,
+      "timestamp": "2026-04-26T10:03:48.688133+00:00",
+      "event_type": "llm_call",
+      "job": "executor",
+      "model_used": "gpt-4o-mini",
+      "latency_ms": 813,
+      "tokens_in": 2671,
+      "tokens_out": 10,
+      "severity": "info",
+      "message": "openai/gpt-4o-mini (executor)",
+      "metadata": {}
+    },
+    {
+      "id": 756,
+      "timestamp": "2026-04-26T10:03:47.849213+00:00",
+      "event_type": "profile_update",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Profile fields updated: []",
+      "metadata": {
+        "fields": [],
+        "telegram_id": "8622052455"
+      }
+    },
+    {
+      "id": 755,
+      "timestamp": "2026-04-26T10:03:47.793034+00:00",
+      "event_type": "llm_call",
+      "job": "executor",
+      "model_used": "gpt-4o-mini",
+      "latency_ms": 973,
+      "tokens_in": 2643,
+      "tokens_out": 10,
+      "severity": "info",
+      "message": "openai/gpt-4o-mini (executor)",
+      "metadata": {}
+    },
+    {
+      "id": 754,
+      "timestamp": "2026-04-26T10:03:46.794317+00:00",
+      "event_type": "profile_update",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Profile fields updated: []",
+      "metadata": {
+        "fields": [],
+        "telegram_id": "8622052455"
+      }
+    },
+    {
+      "id": 753,
+      "timestamp": "2026-04-26T10:03:46.729906+00:00",
+      "event_type": "llm_call",
+      "job": "executor",
+      "model_used": "gpt-4o-mini",
+      "latency_ms": 920,
+      "tokens_in": 2615,
+      "tokens_out": 10,
+      "severity": "info",
+      "message": "openai/gpt-4o-mini (executor)",
+      "metadata": {}
+    },
+    {
+      "id": 752,
+      "timestamp": "2026-04-26T10:03:45.789946+00:00",
+      "event_type": "intervals_read",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 169,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "GET /athlete/i564128/events",
+      "metadata": {}
+    },
+    {
+      "id": 751,
+      "timestamp": "2026-04-26T10:03:45.601532+00:00",
+      "event_type": "llm_call",
+      "job": "executor",
+      "model_used": "gpt-4o-mini",
+      "latency_ms": 1287,
+      "tokens_in": 1639,
+      "tokens_out": 11,
+      "severity": "info",
+      "message": "openai/gpt-4o-mini (executor)",
+      "metadata": {}
+    },
+    {
+      "id": 750,
+      "timestamp": "2026-04-26T10:03:44.293612+00:00",
+      "event_type": "intervals_read",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 503,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "GET /athlete/i564128",
+      "metadata": {}
+    },
+    {
+      "id": 749,
+      "timestamp": "2026-04-26T10:03:44.291572+00:00",
+      "event_type": "intervals_read",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 502,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "GET /athlete/i564128/events",
+      "metadata": {}
+    },
+    {
+      "id": 748,
+      "timestamp": "2026-04-26T10:03:44.276249+00:00",
+      "event_type": "intervals_read",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": 486,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "GET /athlete/i564128/wellness/2026-04-26",
+      "metadata": {}
+    },
+    {
+      "id": 747,
+      "timestamp": "2026-04-26T10:03:43.754723+00:00",
+      "event_type": "message_in",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "intent=tool: For strength training tomorrow I have the workout: 12:03 =\n!!!\n84\nMONDAY - CHEST FOCUS\nWORKOUT\n\nEXERCISES\n\nSETS\n\nBARBELL",
+      "metadata": {
+        "intent": "tool",
+        "telegram_id": "8622052455"
+      }
+    },
+    {
+      "id": 746,
+      "timestamp": "2026-04-26T10:01:50.745681+00:00",
+      "event_type": "message_out",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Replied to chat 8622052455 (170 chars)",
+      "metadata": {
+        "chat_id": "8622052455",
+        "reply_len": 170
+      }
+    },
+    {
+      "id": 745,
+      "timestamp": "2026-04-26T10:01:50.212285+00:00",
+      "event_type": "llm_call",
+      "job": "executor",
+      "model_used": "gpt-4o-mini",
+      "latency_ms": 1789,
+      "tokens_in": 4336,
+      "tokens_out": 37,
+      "severity": "info",
+      "message": "openai/gpt-4o-mini (executor)",
+      "metadata": {}
+    },
+    {
+      "id": 744,
+      "timestamp": "2026-04-26T10:01:48.403958+00:00",
+      "event_type": "intervals_write",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Created event 'Half-Marathon Race' on 2026-05-03T00:00:00",
+      "metadata": {
+        "event_id": 106538553,
+        "event_name": "Half-Marathon Race"
+      }
+    },
+    {
+      "id": 743,
+      "timestamp": "2026-04-26T10:01:48.069363+00:00",
+      "event_type": "intervals_write",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Created event 'Soccer Tournament Day 3' on 2026-05-02T00:00:00",
+      "metadata": {
+        "event_id": 106538551,
+        "event_name": "Soccer Tournament Day 3"
       }
     }
   ]
