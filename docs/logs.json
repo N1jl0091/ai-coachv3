@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-27T20:03:55.405528+00:00",
+  "generated_at": "2026-04-27T22:05:05.907213+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-04-27T18:04:10.573496+00:00",
-  "total_events": 974,
+  "last_event_timestamp": "2026-04-27T20:05:23.685934+00:00",
+  "total_events": 979,
   "messages_per_day": {
     "2026-04-25": 16,
     "2026-04-26": 29,
@@ -471,6 +471,74 @@
   "last_email_at": null,
   "recent_events": [
     {
+      "id": 979,
+      "timestamp": "2026-04-27T20:05:23.685934+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 978,
+      "timestamp": "2026-04-27T20:05:23.442201+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 977,
+      "timestamp": "2026-04-27T20:05:05.813507+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 976,
+      "timestamp": "2026-04-27T20:05:05.111778+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 975,
+      "timestamp": "2026-04-27T20:04:03.088236+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=974 intervals_ok=98.6% emails=0 errors=20)",
+      "metadata": {
+        "summary": "events=974 intervals_ok=98.6% emails=0 errors=20",
+        "commit_sha": "0424255c6eae20cda542a0df0a2a90b150064b1c"
+      }
+    },
+    {
       "id": 974,
       "timestamp": "2026-04-27T18:04:10.573496+00:00",
       "event_type": "shutdown",
@@ -808,74 +876,6 @@
       "tokens_out": null,
       "severity": "info",
       "message": "GET /athlete/i564128/wellness/2026-04-27",
-      "metadata": {}
-    },
-    {
-      "id": 949,
-      "timestamp": "2026-04-27T15:32:54.402027+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 511,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/activities",
-      "metadata": {}
-    },
-    {
-      "id": 948,
-      "timestamp": "2026-04-27T15:32:54.396731+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 503,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128",
-      "metadata": {}
-    },
-    {
-      "id": 947,
-      "timestamp": "2026-04-27T15:32:54.125589+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 501,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/wellness",
-      "metadata": {}
-    },
-    {
-      "id": 946,
-      "timestamp": "2026-04-27T15:32:53.592307+00:00",
-      "event_type": "message_in",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "intent=chat: I kind of want to go for a road run this evening even though abit tired, with my bike zoomx fly",
-      "metadata": {
-        "intent": "chat",
-        "telegram_id": "8622052455"
-      }
-    },
-    {
-      "id": 945,
-      "timestamp": "2026-04-27T15:32:53.568004+00:00",
-      "event_type": "llm_call",
-      "job": "router",
-      "model_used": "gpt-4o-mini",
-      "latency_ms": 2384,
-      "tokens_in": 195,
-      "tokens_out": 1,
-      "severity": "info",
-      "message": "openai/gpt-4o-mini (router)",
       "metadata": {}
     }
   ]
