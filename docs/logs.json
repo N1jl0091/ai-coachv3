@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-28T02:07:33.093598+00:00",
+  "generated_at": "2026-04-28T04:08:39.365956+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-04-28T00:07:42.337594+00:00",
-  "total_events": 989,
+  "last_event_timestamp": "2026-04-28T02:08:50.089544+00:00",
+  "total_events": 994,
   "messages_per_day": {
     "2026-04-25": 16,
     "2026-04-26": 29,
@@ -471,6 +471,74 @@
   "last_email_at": null,
   "recent_events": [
     {
+      "id": 994,
+      "timestamp": "2026-04-28T02:08:50.089544+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 993,
+      "timestamp": "2026-04-28T02:08:49.790210+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 992,
+      "timestamp": "2026-04-28T02:08:39.250206+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 991,
+      "timestamp": "2026-04-28T02:08:38.562430+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 990,
+      "timestamp": "2026-04-28T02:07:40.748590+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=989 intervals_ok=98.6% emails=0 errors=20)",
+      "metadata": {
+        "summary": "events=989 intervals_ok=98.6% emails=0 errors=20",
+        "commit_sha": "7150d003081530bde316693bdb2f73c21f91a68d"
+      }
+    },
+    {
       "id": 989,
       "timestamp": "2026-04-28T00:07:42.337594+00:00",
       "event_type": "shutdown",
@@ -809,74 +877,6 @@
         "summary": "events=964 intervals_ok=98.6% emails=0 errors=20",
         "commit_sha": "afd5cc5d8ea8f63e1d6ada097af600fd0c91eda0"
       }
-    },
-    {
-      "id": 964,
-      "timestamp": "2026-04-27T15:34:03.628254+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 168,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/events",
-      "metadata": {}
-    },
-    {
-      "id": 963,
-      "timestamp": "2026-04-27T15:34:03.432049+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 506,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/wellness/2026-04-27",
-      "metadata": {}
-    },
-    {
-      "id": 962,
-      "timestamp": "2026-04-27T15:33:20.762961+00:00",
-      "event_type": "message_out",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Replied to chat 8622052455 (274 chars)",
-      "metadata": {
-        "chat_id": "8622052455",
-        "reply_len": 274
-      }
-    },
-    {
-      "id": 961,
-      "timestamp": "2026-04-27T15:33:20.219083+00:00",
-      "event_type": "llm_call",
-      "job": "reasoning",
-      "model_used": "gpt-4o",
-      "latency_ms": 1817,
-      "tokens_in": 1544,
-      "tokens_out": 59,
-      "severity": "info",
-      "message": "openai/gpt-4o (reasoning)",
-      "metadata": {}
-    },
-    {
-      "id": 960,
-      "timestamp": "2026-04-27T15:33:18.383180+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 504,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/wellness/2026-04-27",
-      "metadata": {}
     }
   ]
 }
