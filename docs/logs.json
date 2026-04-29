@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-29T14:31:59.808271+00:00",
+  "generated_at": "2026-04-29T16:37:47.023711+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-04-29T12:32:10.560205+00:00",
-  "total_events": 1110,
+  "last_event_timestamp": "2026-04-29T14:37:57.645346+00:00",
+  "total_events": 1115,
   "messages_per_day": {
     "2026-04-25": 16,
     "2026-04-26": 29,
@@ -473,6 +473,74 @@
   "last_email_at": null,
   "recent_events": [
     {
+      "id": 1115,
+      "timestamp": "2026-04-29T14:37:57.645346+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1114,
+      "timestamp": "2026-04-29T14:37:57.418336+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1113,
+      "timestamp": "2026-04-29T14:37:46.922620+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 1112,
+      "timestamp": "2026-04-29T14:37:46.231966+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 1111,
+      "timestamp": "2026-04-29T14:32:08.579871+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=1110 intervals_ok=98.7% emails=0 errors=20)",
+      "metadata": {
+        "summary": "events=1110 intervals_ok=98.7% emails=0 errors=20",
+        "commit_sha": "7d4d259b9ff7e860f97511ec5d84c6f4f258e792"
+      }
+    },
+    {
       "id": 1110,
       "timestamp": "2026-04-29T12:32:10.560205+00:00",
       "event_type": "shutdown",
@@ -811,77 +879,6 @@
         "summary": "events=1085 intervals_ok=98.7% emails=0 errors=20",
         "commit_sha": "c9b66bbd87d9974655c93eb7c435bb2937ed81b4"
       }
-    },
-    {
-      "id": 1085,
-      "timestamp": "2026-04-29T04:19:24.619036+00:00",
-      "event_type": "message_out",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Replied to chat 8622052455 (124 chars)",
-      "metadata": {
-        "chat_id": "8622052455",
-        "reply_len": 124
-      }
-    },
-    {
-      "id": 1084,
-      "timestamp": "2026-04-29T04:19:24.057730+00:00",
-      "event_type": "llm_call",
-      "job": "executor",
-      "model_used": "gpt-4o-mini",
-      "latency_ms": 1138,
-      "tokens_in": 1331,
-      "tokens_out": 25,
-      "severity": "info",
-      "message": "openai/gpt-4o-mini (executor)",
-      "metadata": {}
-    },
-    {
-      "id": 1083,
-      "timestamp": "2026-04-29T04:19:22.894203+00:00",
-      "event_type": "intervals_write",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Updated event 106538547: []",
-      "metadata": {
-        "fields": [],
-        "event_id": 106538547
-      }
-    },
-    {
-      "id": 1082,
-      "timestamp": "2026-04-29T04:19:22.662647+00:00",
-      "event_type": "llm_call",
-      "job": "executor",
-      "model_used": "gpt-4o-mini",
-      "latency_ms": 1105,
-      "tokens_in": 684,
-      "tokens_out": 18,
-      "severity": "info",
-      "message": "openai/gpt-4o-mini (executor)",
-      "metadata": {}
-    },
-    {
-      "id": 1081,
-      "timestamp": "2026-04-29T04:19:21.548275+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 514,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128",
-      "metadata": {}
     }
   ]
 }
