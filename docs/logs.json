@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-29T12:29:03.534420+00:00",
+  "generated_at": "2026-04-29T14:31:59.808271+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-04-29T10:29:14.306537+00:00",
-  "total_events": 1105,
+  "last_event_timestamp": "2026-04-29T12:32:10.560205+00:00",
+  "total_events": 1110,
   "messages_per_day": {
     "2026-04-25": 16,
     "2026-04-26": 29,
@@ -473,6 +473,74 @@
   "last_email_at": null,
   "recent_events": [
     {
+      "id": 1110,
+      "timestamp": "2026-04-29T12:32:10.560205+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1109,
+      "timestamp": "2026-04-29T12:32:10.289614+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1108,
+      "timestamp": "2026-04-29T12:31:59.739760+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 1107,
+      "timestamp": "2026-04-29T12:31:59.057059+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 1106,
+      "timestamp": "2026-04-29T12:29:11.328802+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=1105 intervals_ok=98.7% emails=0 errors=20)",
+      "metadata": {
+        "summary": "events=1105 intervals_ok=98.7% emails=0 errors=20",
+        "commit_sha": "63de58ab135bc5e840627f97629aeb4fe80a6030"
+      }
+    },
+    {
       "id": 1105,
       "timestamp": "2026-04-29T10:29:14.306537+00:00",
       "event_type": "shutdown",
@@ -813,77 +881,6 @@
       "tokens_out": null,
       "severity": "info",
       "message": "GET /athlete/i564128",
-      "metadata": {}
-    },
-    {
-      "id": 1080,
-      "timestamp": "2026-04-29T04:19:21.539525+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 507,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/events",
-      "metadata": {}
-    },
-    {
-      "id": 1079,
-      "timestamp": "2026-04-29T04:19:21.537609+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 497,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/wellness/2026-04-29",
-      "metadata": {}
-    },
-    {
-      "id": 1078,
-      "timestamp": "2026-04-29T04:19:21.020677+00:00",
-      "event_type": "message_in",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "intent=tool: Please change that to soccer practice not tournament- sport type soccer",
-      "metadata": {
-        "intent": "tool",
-        "telegram_id": "8622052455"
-      }
-    },
-    {
-      "id": 1077,
-      "timestamp": "2026-04-29T04:18:47.409949+00:00",
-      "event_type": "message_out",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Replied to chat 8622052455 (437 chars)",
-      "metadata": {
-        "chat_id": "8622052455",
-        "reply_len": 437
-      }
-    },
-    {
-      "id": 1076,
-      "timestamp": "2026-04-29T04:18:46.886316+00:00",
-      "event_type": "llm_call",
-      "job": "reasoning",
-      "model_used": "gpt-4o",
-      "latency_ms": 2305,
-      "tokens_in": 1362,
-      "tokens_out": 109,
-      "severity": "info",
-      "message": "openai/gpt-4o (reasoning)",
       "metadata": {}
     }
   ]
