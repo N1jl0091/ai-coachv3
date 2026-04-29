@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-28T22:20:38.024401+00:00",
+  "generated_at": "2026-04-29T00:21:51.018678+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-04-28T20:20:48.681070+00:00",
-  "total_events": 1053,
+  "last_event_timestamp": "2026-04-28T22:22:01.709548+00:00",
+  "total_events": 1058,
   "messages_per_day": {
     "2026-04-25": 16,
     "2026-04-26": 29,
@@ -471,6 +471,74 @@
   "last_email_at": null,
   "recent_events": [
     {
+      "id": 1058,
+      "timestamp": "2026-04-28T22:22:01.709548+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1057,
+      "timestamp": "2026-04-28T22:22:01.475928+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1056,
+      "timestamp": "2026-04-28T22:21:50.970522+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 1055,
+      "timestamp": "2026-04-28T22:21:50.281142+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 1054,
+      "timestamp": "2026-04-28T22:20:47.502743+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=1053 intervals_ok=98.7% emails=0 errors=20)",
+      "metadata": {
+        "summary": "events=1053 intervals_ok=98.7% emails=0 errors=20",
+        "commit_sha": "d918453a4c71658cfa6219b40ea5424c5ae8ae7b"
+      }
+    },
+    {
       "id": 1053,
       "timestamp": "2026-04-28T20:20:48.681070+00:00",
       "event_type": "shutdown",
@@ -807,83 +875,6 @@
       "tokens_out": null,
       "severity": "info",
       "message": "GET /athlete/i564128/activities",
-      "metadata": {}
-    },
-    {
-      "id": 1028,
-      "timestamp": "2026-04-28T15:12:06.842407+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 515,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/activities",
-      "metadata": {}
-    },
-    {
-      "id": 1027,
-      "timestamp": "2026-04-28T15:12:01.307200+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 206,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/activities",
-      "metadata": {}
-    },
-    {
-      "id": 1026,
-      "timestamp": "2026-04-28T15:12:01.076483+00:00",
-      "event_type": "activity_analysis_start",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Starting analysis for Strava activity 18293198145",
-      "metadata": {
-        "strava_id": "18293198145"
-      }
-    },
-    {
-      "id": 1025,
-      "timestamp": "2026-04-28T15:12:01.060294+00:00",
-      "event_type": "strava_webhook_event",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "object=activity aspect=create id=18293198145",
-      "metadata": {
-        "payload": {
-          "updates": {},
-          "owner_id": 53988707,
-          "object_id": 18293198145,
-          "event_time": 1777389120,
-          "aspect_type": "create",
-          "object_type": "activity",
-          "subscription_id": 342594
-        }
-      }
-    },
-    {
-      "id": 1024,
-      "timestamp": "2026-04-28T14:17:25.731751+00:00",
-      "event_type": "shutdown",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "ai-coach stopped",
       "metadata": {}
     }
   ]
