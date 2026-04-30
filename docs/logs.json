@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-30T04:58:46.100179+00:00",
+  "generated_at": "2026-04-30T06:59:58.239601+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-04-30T02:58:54.989523+00:00",
-  "total_events": 1165,
+  "last_event_timestamp": "2026-04-30T05:00:15.882000+00:00",
+  "total_events": 1170,
   "messages_per_day": {
     "2026-04-25": 16,
     "2026-04-26": 29,
@@ -473,6 +473,74 @@
   "last_email_at": null,
   "recent_events": [
     {
+      "id": 1170,
+      "timestamp": "2026-04-30T05:00:15.882000+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1169,
+      "timestamp": "2026-04-30T05:00:15.774369+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1168,
+      "timestamp": "2026-04-30T04:59:58.120216+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 1167,
+      "timestamp": "2026-04-30T04:59:57.359112+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 1166,
+      "timestamp": "2026-04-30T04:58:54.241839+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=1165 intervals_ok=98.7% emails=0 errors=20)",
+      "metadata": {
+        "summary": "events=1165 intervals_ok=98.7% emails=0 errors=20",
+        "commit_sha": "b5e510772f8a6d51802234e52f02a3b9032dcf1e"
+      }
+    },
+    {
       "id": 1165,
       "timestamp": "2026-04-30T02:58:54.989523+00:00",
       "event_type": "shutdown",
@@ -811,74 +879,6 @@
       "severity": "info",
       "message": "GET /athlete/i564128",
       "metadata": {}
-    },
-    {
-      "id": 1140,
-      "timestamp": "2026-04-29T19:24:42.024129+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 535,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/activities",
-      "metadata": {}
-    },
-    {
-      "id": 1139,
-      "timestamp": "2026-04-29T19:24:41.939612+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 533,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/events",
-      "metadata": {}
-    },
-    {
-      "id": 1138,
-      "timestamp": "2026-04-29T19:24:41.938547+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 530,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/wellness/2026-04-29",
-      "metadata": {}
-    },
-    {
-      "id": 1137,
-      "timestamp": "2026-04-29T19:24:41.938235+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 530,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/wellness",
-      "metadata": {}
-    },
-    {
-      "id": 1136,
-      "timestamp": "2026-04-29T19:24:41.299786+00:00",
-      "event_type": "message_in",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "intent=chat: How are you calculating atl tsb",
-      "metadata": {
-        "intent": "chat",
-        "telegram_id": "8622052455"
-      }
     }
   ]
 }
