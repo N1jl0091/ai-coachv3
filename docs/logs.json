@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-02T09:32:49.535089+00:00",
+  "generated_at": "2026-05-02T11:33:54.948133+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-05-02T08:11:26.521156+00:00",
-  "total_events": 1499,
+  "last_event_timestamp": "2026-05-02T09:34:05.498828+00:00",
+  "total_events": 1504,
   "messages_per_day": {
     "2026-04-25": 16,
     "2026-04-26": 29,
@@ -479,6 +479,74 @@
   "last_email_at": null,
   "recent_events": [
     {
+      "id": 1504,
+      "timestamp": "2026-05-02T09:34:05.498828+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1503,
+      "timestamp": "2026-05-02T09:34:05.402310+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1502,
+      "timestamp": "2026-05-02T09:33:54.873545+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 1501,
+      "timestamp": "2026-05-02T09:33:54.170814+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 1500,
+      "timestamp": "2026-05-02T09:32:57.471584+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=1499 intervals_ok=99.0% emails=0 errors=20)",
+      "metadata": {
+        "summary": "events=1499 intervals_ok=99.0% emails=0 errors=20",
+        "commit_sha": "01d1b56b9c61c7972c6cff8356f182c4c5fc0ada"
+      }
+    },
+    {
       "id": 1499,
       "timestamp": "2026-05-02T08:11:26.521156+00:00",
       "event_type": "activity_analysis_done",
@@ -828,78 +896,6 @@
         "intent": "tool",
         "telegram_id": "8622052455"
       }
-    },
-    {
-      "id": 1474,
-      "timestamp": "2026-05-02T06:40:33.610260+00:00",
-      "event_type": "message_out",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Replied to chat 8622052455 (60 chars)",
-      "metadata": {
-        "chat_id": "8622052455",
-        "reply_len": 60
-      }
-    },
-    {
-      "id": 1473,
-      "timestamp": "2026-05-02T06:40:33.086976+00:00",
-      "event_type": "llm_call",
-      "job": "executor",
-      "model_used": "gpt-4o-mini",
-      "latency_ms": 892,
-      "tokens_in": 1390,
-      "tokens_out": 12,
-      "severity": "info",
-      "message": "openai/gpt-4o-mini (executor)",
-      "metadata": {}
-    },
-    {
-      "id": 1472,
-      "timestamp": "2026-05-02T06:40:32.183249+00:00",
-      "event_type": "intervals_write",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "warn",
-      "message": "Deleted event 107655191",
-      "metadata": {
-        "event_id": 107655191
-      }
-    },
-    {
-      "id": 1471,
-      "timestamp": "2026-05-02T06:40:31.984238+00:00",
-      "event_type": "intervals_write",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "warn",
-      "message": "Deleted event 107650951",
-      "metadata": {
-        "event_id": 107650951
-      }
-    },
-    {
-      "id": 1470,
-      "timestamp": "2026-05-02T06:40:31.788808+00:00",
-      "event_type": "llm_call",
-      "job": "executor",
-      "model_used": "gpt-4o-mini",
-      "latency_ms": 1413,
-      "tokens_in": 1299,
-      "tokens_out": 52,
-      "severity": "info",
-      "message": "openai/gpt-4o-mini (executor)",
-      "metadata": {}
     }
   ]
 }
