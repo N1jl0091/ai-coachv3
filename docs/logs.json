@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-02T13:34:59.889304+00:00",
+  "generated_at": "2026-05-02T15:36:12.270701+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-05-02T11:35:10.415926+00:00",
-  "total_events": 1509,
+  "last_event_timestamp": "2026-05-02T13:36:22.738864+00:00",
+  "total_events": 1261,
   "messages_per_day": {
-    "2026-04-25": 16,
+    "2026-04-25": 5,
     "2026-04-26": 29,
     "2026-04-27": 11,
     "2026-04-29": 4,
@@ -13,21 +13,21 @@
     "2026-05-02": 11
   },
   "llm_calls_by_job": {
-    "executor": 76,
-    "reasoning": 38,
-    "router": 48,
+    "executor": 75,
+    "reasoning": 34,
+    "router": 44,
     "planning": 4,
     "analysis": 1
   },
   "avg_latency_by_job": {
-    "executor": 2318,
-    "reasoning": 1649,
-    "router": 1153,
+    "executor": 2333,
+    "reasoning": 1758,
+    "router": 1214,
     "planning": 3050,
     "analysis": 1577
   },
   "tokens_per_day": {
-    "2026-04-25": 22444,
+    "2026-04-25": 11082,
     "2026-04-26": 131600,
     "2026-04-27": 35661,
     "2026-04-29": 7206,
@@ -35,9 +35,9 @@
     "2026-05-01": 1580,
     "2026-05-02": 37141
   },
-  "intervals_success_rate": 99.0,
-  "intervals_total": 507,
-  "intervals_failed": 5,
+  "intervals_success_rate": 99.1,
+  "intervals_total": 447,
+  "intervals_failed": 4,
   "recent_errors": [
     {
       "id": 711,
@@ -382,102 +382,79 @@
       "metadata": {
         "handler": "on_message"
       }
-    },
-    {
-      "id": 177,
-      "timestamp": "2026-04-25T15:10:59.330648+00:00",
-      "event_type": "error",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "llm_error: groq call failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kq0dq479etz8g3h98qv3nada` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97732, Requested 4289. Please try again in 29m6.144s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
-      "metadata": {
-        "handler": "on_message"
-      }
-    },
-    {
-      "id": 170,
-      "timestamp": "2026-04-25T15:10:30.660607+00:00",
-      "event_type": "error",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "llm_error: groq call failed: Error code: 400 - {'error': {'message': \"'messages.6' : for 'role:tool' the following must be satisfied[('messages.6.tool_call_id' : property 'tool_call_id' is missing)]\", 'type': 'invalid_request_error'}}",
-      "metadata": {
-        "handler": "on_message"
-      }
-    },
-    {
-      "id": 169,
-      "timestamp": "2026-04-25T15:10:30.021996+00:00",
-      "event_type": "error",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "Tool create_workout raised: [422] POST /athlete/i564128/events failed with 422: {\"status\":422,\"error\":\"Invalid start date: java.time.format.DateTimeParseException: Text '2026-04-26' could not be parsed at index 10\"}",
-      "metadata": {
-        "args": {
-          "date": "2026-04-26",
-          "tags": [
-            "fast pace",
-            "endurance"
-          ],
-          "color": "#FF9800",
-          "sport": "Run",
-          "steps": [
-            {
-              "type": "warmup",
-              "zone": 1,
-              "notes": "Easy jog",
-              "target_low": null,
-              "target_high": null,
-              "target_type": "pace",
-              "distance_meters": null,
-              "duration_seconds": 600
-            },
-            {
-              "type": "steady",
-              "zone": 4,
-              "notes": "Fast pace",
-              "target_low": 240,
-              "target_high": 260,
-              "target_type": "pace",
-              "distance_meters": 10000,
-              "duration_seconds": 3600
-            },
-            {
-              "type": "cooldown",
-              "zone": 1,
-              "notes": "Easy jog",
-              "target_low": null,
-              "target_high": null,
-              "target_type": "pace",
-              "distance_meters": null,
-              "duration_seconds": 600
-            }
-          ],
-          "title": "10km Fast Pace Run",
-          "gym_sets": [],
-          "description": "10km fast pace run with warmup and cooldown",
-          "planned_tss": 70,
-          "planned_duration_seconds": 4800
-        },
-        "tool": "create_workout"
-      }
     }
   ],
   "email_count": 0,
   "last_email_at": null,
   "recent_events": [
+    {
+      "id": 1514,
+      "timestamp": "2026-05-02T13:36:22.738864+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1513,
+      "timestamp": "2026-05-02T13:36:22.644825+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1512,
+      "timestamp": "2026-05-02T13:36:12.140376+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 1511,
+      "timestamp": "2026-05-02T13:36:11.406152+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 1510,
+      "timestamp": "2026-05-02T13:35:08.394334+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=1509 intervals_ok=99.0% emails=0 errors=20)",
+      "metadata": {
+        "summary": "events=1509 intervals_ok=99.0% emails=0 errors=20",
+        "commit_sha": "4a006d4c56afa6f0cbe9b215792f2ed642a26679"
+      }
+    },
     {
       "id": 1509,
       "timestamp": "2026-05-02T11:35:10.415926+00:00",
@@ -825,77 +802,6 @@
       "severity": "info",
       "message": "ai-coach stopped",
       "metadata": {}
-    },
-    {
-      "id": 1484,
-      "timestamp": "2026-05-02T07:32:55.033187+00:00",
-      "event_type": "system",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Telegram bot stopped",
-      "metadata": {}
-    },
-    {
-      "id": 1483,
-      "timestamp": "2026-05-02T07:32:49.407287+00:00",
-      "event_type": "system",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Telegram bot polling started",
-      "metadata": {}
-    },
-    {
-      "id": 1482,
-      "timestamp": "2026-05-02T07:32:48.705230+00:00",
-      "event_type": "startup",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "ai-coach booting",
-      "metadata": {}
-    },
-    {
-      "id": 1481,
-      "timestamp": "2026-05-02T07:31:56.705431+00:00",
-      "event_type": "dashboard_pushed",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=1480 intervals_ok=99.0% emails=0 errors=20)",
-      "metadata": {
-        "summary": "events=1480 intervals_ok=99.0% emails=0 errors=20",
-        "commit_sha": "01b4f2536fba473ce412b1df8de845662fe65a31"
-      }
-    },
-    {
-      "id": 1480,
-      "timestamp": "2026-05-02T06:43:51.493991+00:00",
-      "event_type": "message_out",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Replied to chat 8622052455 (879 chars)",
-      "metadata": {
-        "chat_id": "8622052455",
-        "reply_len": 879
-      }
     }
   ]
 }
