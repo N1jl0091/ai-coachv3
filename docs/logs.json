@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-03T07:45:06.493458+00:00",
+  "generated_at": "2026-05-03T09:46:13.730166+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-05-03T07:08:09.003636+00:00",
-  "total_events": 984,
+  "last_event_timestamp": "2026-05-03T07:46:22.803222+00:00",
+  "total_events": 857,
   "messages_per_day": {
-    "2026-04-26": 12,
+    "2026-04-26": 4,
     "2026-04-27": 11,
     "2026-04-29": 4,
     "2026-04-30": 8,
@@ -13,20 +13,20 @@
   },
   "llm_calls_by_job": {
     "analysis": 1,
-    "executor": 57,
-    "reasoning": 25,
-    "router": 33,
+    "executor": 46,
+    "reasoning": 20,
+    "router": 28,
     "planning": 4
   },
   "avg_latency_by_job": {
     "analysis": 11470,
-    "executor": 2448,
-    "reasoning": 2083,
-    "router": 1394,
+    "executor": 2465,
+    "reasoning": 2189,
+    "router": 1472,
     "planning": 3050
   },
   "tokens_per_day": {
-    "2026-04-26": 67822,
+    "2026-04-26": 36883,
     "2026-04-27": 35661,
     "2026-04-29": 7206,
     "2026-04-30": 28346,
@@ -34,132 +34,81 @@
     "2026-05-02": 37141,
     "2026-05-03": 1244
   },
-  "intervals_success_rate": 99.0,
-  "intervals_total": 313,
-  "intervals_failed": 3,
-  "recent_errors": [
-    {
-      "id": 711,
-      "timestamp": "2026-04-26T09:33:54.537780+00:00",
-      "event_type": "error",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "Tool bulk_create_workouts raised: [422] POST /athlete/i564128/events/bulk failed with 422: {\"status\":422,\"error\":\"At least one event required\"}",
-      "metadata": {
-        "args": {},
-        "tool": "bulk_create_workouts"
-      }
-    },
-    {
-      "id": 710,
-      "timestamp": "2026-04-26T09:33:54.521049+00:00",
-      "event_type": "intervals_write",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 183,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "POST /athlete/i564128/events/bulk \u2192 422: {\"status\":422,\"error\":\"At least one event required\"}",
-      "metadata": {}
-    },
-    {
-      "id": 707,
-      "timestamp": "2026-04-26T09:33:50.882656+00:00",
-      "event_type": "error",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "Tool bulk_create_workouts raised: [422] POST /athlete/i564128/events/bulk failed with 422: {\"status\":422,\"error\":\"At least one event required\"}",
-      "metadata": {
-        "args": {},
-        "tool": "bulk_create_workouts"
-      }
-    },
-    {
-      "id": 706,
-      "timestamp": "2026-04-26T09:33:50.856062+00:00",
-      "event_type": "intervals_write",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 547,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "POST /athlete/i564128/events/bulk \u2192 422: {\"status\":422,\"error\":\"At least one event required\"}",
-      "metadata": {}
-    },
-    {
-      "id": 702,
-      "timestamp": "2026-04-26T09:33:41.181997+00:00",
-      "event_type": "error",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "Tool bulk_create_workouts raised: [422] POST /athlete/i564128/events/bulk failed with 422: {\"status\":422,\"error\":\"At least one event required\"}",
-      "metadata": {
-        "args": {},
-        "tool": "bulk_create_workouts"
-      }
-    },
-    {
-      "id": 701,
-      "timestamp": "2026-04-26T09:33:41.158109+00:00",
-      "event_type": "intervals_write",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 194,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "POST /athlete/i564128/events/bulk \u2192 422: {\"status\":422,\"error\":\"At least one event required\"}",
-      "metadata": {}
-    },
-    {
-      "id": 673,
-      "timestamp": "2026-04-26T09:30:59.093296+00:00",
-      "event_type": "error",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "error",
-      "message": "Tool create_workout raised: Endurance workouts must have at least one WorkoutStep.",
-      "metadata": {
-        "args": {
-          "date": "2026-05-03",
-          "tags": [
-            "race",
-            "10km",
-            "trail"
-          ],
-          "color": "#2196F3",
-          "sport": "TrailRun",
-          "steps": [],
-          "title": "10km Steep Trail Run",
-          "gym_sets": [],
-          "description": "Upcoming race on a steep trail, focusing on endurance and strength.",
-          "planned_tss": 0,
-          "planned_duration_seconds": 0
-        },
-        "tool": "create_workout"
-      }
-    }
-  ],
+  "intervals_success_rate": 100.0,
+  "intervals_total": 248,
+  "intervals_failed": 0,
+  "recent_errors": [],
   "email_count": 1,
   "last_email_at": "2026-05-03T07:08:08.983109+00:00",
   "recent_events": [
+    {
+      "id": 1575,
+      "timestamp": "2026-05-03T07:46:22.803222+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1574,
+      "timestamp": "2026-05-03T07:46:22.620839+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1573,
+      "timestamp": "2026-05-03T07:46:13.662587+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 1572,
+      "timestamp": "2026-05-03T07:46:12.944689+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 1571,
+      "timestamp": "2026-05-03T07:45:14.108469+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=984 intervals_ok=99.0% emails=1 errors=7)",
+      "metadata": {
+        "summary": "events=984 intervals_ok=99.0% emails=1 errors=7",
+        "commit_sha": "1472b86824b01bfc41a774a001205ab59bd1789f"
+      }
+    },
     {
       "id": 1570,
       "timestamp": "2026-05-03T07:08:09.003636+00:00",
@@ -509,74 +458,6 @@
     {
       "id": 1546,
       "timestamp": "2026-05-03T03:43:56.772626+00:00",
-      "event_type": "startup",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "ai-coach booting",
-      "metadata": {}
-    },
-    {
-      "id": 1545,
-      "timestamp": "2026-05-03T03:43:00.454466+00:00",
-      "event_type": "dashboard_pushed",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=1144 intervals_ok=99.2% emails=0 errors=9)",
-      "metadata": {
-        "summary": "events=1144 intervals_ok=99.2% emails=0 errors=9",
-        "commit_sha": "d38df3181d2282858db3c789dfaf5309606c0922"
-      }
-    },
-    {
-      "id": 1544,
-      "timestamp": "2026-05-03T01:43:01.623219+00:00",
-      "event_type": "shutdown",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "ai-coach stopped",
-      "metadata": {}
-    },
-    {
-      "id": 1543,
-      "timestamp": "2026-05-03T01:43:01.518374+00:00",
-      "event_type": "system",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Telegram bot stopped",
-      "metadata": {}
-    },
-    {
-      "id": 1542,
-      "timestamp": "2026-05-03T01:42:52.402708+00:00",
-      "event_type": "system",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Telegram bot polling started",
-      "metadata": {}
-    },
-    {
-      "id": 1541,
-      "timestamp": "2026-05-03T01:42:51.710623+00:00",
       "event_type": "startup",
       "job": "system",
       "model_used": null,
