@@ -1,10 +1,9 @@
 {
-  "generated_at": "2026-05-03T09:46:13.730166+00:00",
+  "generated_at": "2026-05-03T11:47:17.757194+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-05-03T07:46:22.803222+00:00",
-  "total_events": 857,
+  "last_event_timestamp": "2026-05-03T10:02:37.768758+00:00",
+  "total_events": 804,
   "messages_per_day": {
-    "2026-04-26": 4,
     "2026-04-27": 11,
     "2026-04-29": 4,
     "2026-04-30": 8,
@@ -13,20 +12,19 @@
   },
   "llm_calls_by_job": {
     "analysis": 1,
-    "executor": 46,
-    "reasoning": 20,
-    "router": 28,
-    "planning": 4
+    "executor": 37,
+    "reasoning": 19,
+    "router": 27,
+    "planning": 1
   },
   "avg_latency_by_job": {
     "analysis": 11470,
-    "executor": 2465,
-    "reasoning": 2189,
-    "router": 1472,
-    "planning": 3050
+    "executor": 2352,
+    "reasoning": 2250,
+    "router": 1498,
+    "planning": 3142
   },
   "tokens_per_day": {
-    "2026-04-26": 36883,
     "2026-04-27": 35661,
     "2026-04-29": 7206,
     "2026-04-30": 28346,
@@ -35,12 +33,105 @@
     "2026-05-03": 1244
   },
   "intervals_success_rate": 100.0,
-  "intervals_total": 248,
+  "intervals_total": 221,
   "intervals_failed": 0,
   "recent_errors": [],
   "email_count": 1,
   "last_email_at": "2026-05-03T07:08:08.983109+00:00",
   "recent_events": [
+    {
+      "id": 1581,
+      "timestamp": "2026-05-03T10:02:37.768758+00:00",
+      "event_type": "strava_webhook_event",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "object=activity aspect=update id=18354697831",
+      "metadata": {
+        "payload": {
+          "updates": {
+            "title": "VWS Trail Challenge"
+          },
+          "owner_id": 53988707,
+          "object_id": 18354697831,
+          "event_time": 1777802557,
+          "aspect_type": "update",
+          "object_type": "activity",
+          "subscription_id": 342594
+        }
+      }
+    },
+    {
+      "id": 1580,
+      "timestamp": "2026-05-03T09:47:23.394254+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1579,
+      "timestamp": "2026-05-03T09:47:23.300341+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1578,
+      "timestamp": "2026-05-03T09:47:17.679864+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 1577,
+      "timestamp": "2026-05-03T09:47:16.938876+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 1576,
+      "timestamp": "2026-05-03T09:46:21.331529+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=857 intervals_ok=100.0% emails=1 errors=0)",
+      "metadata": {
+        "summary": "events=857 intervals_ok=100.0% emails=1 errors=0",
+        "commit_sha": "93cfaba3fe35927902f620bee1f88947a619a8c7"
+      }
+    },
     {
       "id": 1575,
       "timestamp": "2026-05-03T07:46:22.803222+00:00",
@@ -385,87 +476,6 @@
       "tokens_out": null,
       "severity": "info",
       "message": "Telegram bot polling started",
-      "metadata": {}
-    },
-    {
-      "id": 1551,
-      "timestamp": "2026-05-03T05:45:05.577400+00:00",
-      "event_type": "startup",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "ai-coach booting",
-      "metadata": {}
-    },
-    {
-      "id": 1550,
-      "timestamp": "2026-05-03T05:44:04.949894+00:00",
-      "event_type": "dashboard_pushed",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=1093 intervals_ok=99.2% emails=0 errors=8)",
-      "metadata": {
-        "summary": "events=1093 intervals_ok=99.2% emails=0 errors=8",
-        "commit_sha": "147a75bd12e7a873db2aef368d1a1c2efe8fdf54"
-      }
-    },
-    {
-      "id": 1549,
-      "timestamp": "2026-05-03T03:44:08.055340+00:00",
-      "event_type": "shutdown",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "ai-coach stopped",
-      "metadata": {}
-    },
-    {
-      "id": 1548,
-      "timestamp": "2026-05-03T03:44:07.975106+00:00",
-      "event_type": "system",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Telegram bot stopped",
-      "metadata": {}
-    },
-    {
-      "id": 1547,
-      "timestamp": "2026-05-03T03:43:57.462645+00:00",
-      "event_type": "system",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Telegram bot polling started",
-      "metadata": {}
-    },
-    {
-      "id": 1546,
-      "timestamp": "2026-05-03T03:43:56.772626+00:00",
-      "event_type": "startup",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "ai-coach booting",
       "metadata": {}
     }
   ]
