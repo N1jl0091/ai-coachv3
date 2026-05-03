@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-03T19:52:17.153428+00:00",
+  "generated_at": "2026-05-03T21:53:26.450286+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-05-03T18:17:31.134603+00:00",
+  "last_event_timestamp": "2026-05-03T19:53:33.981587+00:00",
   "total_events": 813,
   "messages_per_day": {
     "2026-04-27": 11,
@@ -40,6 +40,74 @@
   "email_count": 1,
   "last_email_at": "2026-05-03T07:08:08.983109+00:00",
   "recent_events": [
+    {
+      "id": 1615,
+      "timestamp": "2026-05-03T19:53:33.981587+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1614,
+      "timestamp": "2026-05-03T19:53:33.907273+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1613,
+      "timestamp": "2026-05-03T19:53:26.395565+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 1612,
+      "timestamp": "2026-05-03T19:53:25.703213+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 1611,
+      "timestamp": "2026-05-03T19:52:25.579982+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=813 intervals_ok=100.0% emails=1 errors=0)",
+      "metadata": {
+        "summary": "events=813 intervals_ok=100.0% emails=1 errors=0",
+        "commit_sha": "31f44acc2a862d3409b800a43112b8caa3c6b900"
+      }
+    },
     {
       "id": 1610,
       "timestamp": "2026-05-03T18:17:31.134603+00:00",
@@ -379,86 +447,6 @@
       "severity": "info",
       "message": "ai-coach stopped",
       "metadata": {}
-    },
-    {
-      "id": 1585,
-      "timestamp": "2026-05-03T11:48:32.789760+00:00",
-      "event_type": "system",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Telegram bot stopped",
-      "metadata": {}
-    },
-    {
-      "id": 1584,
-      "timestamp": "2026-05-03T11:48:23.492409+00:00",
-      "event_type": "system",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Telegram bot polling started",
-      "metadata": {}
-    },
-    {
-      "id": 1583,
-      "timestamp": "2026-05-03T11:48:22.791174+00:00",
-      "event_type": "startup",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "ai-coach booting",
-      "metadata": {}
-    },
-    {
-      "id": 1582,
-      "timestamp": "2026-05-03T11:47:25.250947+00:00",
-      "event_type": "dashboard_pushed",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=804 intervals_ok=100.0% emails=1 errors=0)",
-      "metadata": {
-        "summary": "events=804 intervals_ok=100.0% emails=1 errors=0",
-        "commit_sha": "2167fc11e88f42169c38d8f45541ef3b040ae364"
-      }
-    },
-    {
-      "id": 1581,
-      "timestamp": "2026-05-03T10:02:37.768758+00:00",
-      "event_type": "strava_webhook_event",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "object=activity aspect=update id=18354697831",
-      "metadata": {
-        "payload": {
-          "updates": {
-            "title": "VWS Trail Challenge"
-          },
-          "owner_id": 53988707,
-          "object_id": 18354697831,
-          "event_time": 1777802557,
-          "aspect_type": "update",
-          "object_type": "activity",
-          "subscription_id": 342594
-        }
-      }
     }
   ]
 }
