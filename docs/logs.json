@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-04T03:56:49.953567+00:00",
+  "generated_at": "2026-05-04T05:57:54.848963+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-05-04T01:57:00.472061+00:00",
+  "last_event_timestamp": "2026-05-04T03:58:12.463525+00:00",
   "total_events": 813,
   "messages_per_day": {
     "2026-04-27": 11,
@@ -40,6 +40,74 @@
   "email_count": 1,
   "last_email_at": "2026-05-03T07:08:08.983109+00:00",
   "recent_events": [
+    {
+      "id": 1635,
+      "timestamp": "2026-05-04T03:58:12.463525+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1634,
+      "timestamp": "2026-05-04T03:58:12.391451+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1633,
+      "timestamp": "2026-05-04T03:57:54.808403+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 1632,
+      "timestamp": "2026-05-04T03:57:54.137507+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 1631,
+      "timestamp": "2026-05-04T03:56:57.004583+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=813 intervals_ok=100.0% emails=1 errors=0)",
+      "metadata": {
+        "summary": "events=813 intervals_ok=100.0% emails=1 errors=0",
+        "commit_sha": "32a2a4ba185ff8d0922b0f003d837e7c4e3b9543"
+      }
+    },
     {
       "id": 1630,
       "timestamp": "2026-05-04T01:57:00.472061+00:00",
@@ -378,74 +446,6 @@
       "tokens_out": null,
       "severity": "info",
       "message": "GET /athlete/i564128/events",
-      "metadata": {}
-    },
-    {
-      "id": 1605,
-      "timestamp": "2026-05-03T18:17:27.448815+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 212,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128",
-      "metadata": {}
-    },
-    {
-      "id": 1604,
-      "timestamp": "2026-05-03T18:17:27.429391+00:00",
-      "event_type": "intervals_read",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": 193,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "GET /athlete/i564128/wellness",
-      "metadata": {}
-    },
-    {
-      "id": 1603,
-      "timestamp": "2026-05-03T18:17:27.214768+00:00",
-      "event_type": "message_in",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "intent=chat: How was my run today",
-      "metadata": {
-        "intent": "chat",
-        "telegram_id": "8622052455"
-      }
-    },
-    {
-      "id": 1602,
-      "timestamp": "2026-05-03T18:17:27.197026+00:00",
-      "event_type": "llm_call",
-      "job": "router",
-      "model_used": "gpt-4o-mini",
-      "latency_ms": 2096,
-      "tokens_in": 177,
-      "tokens_out": 1,
-      "severity": "info",
-      "message": "openai/gpt-4o-mini (router)",
-      "metadata": {}
-    },
-    {
-      "id": 1601,
-      "timestamp": "2026-05-03T17:52:26.304817+00:00",
-      "event_type": "shutdown",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "ai-coach stopped",
       "metadata": {}
     }
   ]
