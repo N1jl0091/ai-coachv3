@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-09T01:51:44.287653+00:00",
+  "generated_at": "2026-05-09T03:52:43.352108+00:00",
   "window_days": 7,
-  "last_event_timestamp": "2026-05-08T23:51:54.813760+00:00",
+  "last_event_timestamp": "2026-05-09T01:52:48.911941+00:00",
   "total_events": 584,
   "messages_per_day": {
     "2026-05-02": 11,
@@ -32,6 +32,74 @@
   "email_count": 1,
   "last_email_at": "2026-05-03T07:08:08.983109+00:00",
   "recent_events": [
+    {
+      "id": 1962,
+      "timestamp": "2026-05-09T01:52:48.911941+00:00",
+      "event_type": "shutdown",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1961,
+      "timestamp": "2026-05-09T01:52:48.841197+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot stopped",
+      "metadata": {}
+    },
+    {
+      "id": 1960,
+      "timestamp": "2026-05-09T01:52:43.275404+00:00",
+      "event_type": "system",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Telegram bot polling started",
+      "metadata": {}
+    },
+    {
+      "id": 1959,
+      "timestamp": "2026-05-09T01:52:42.576643+00:00",
+      "event_type": "startup",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "ai-coach booting",
+      "metadata": {}
+    },
+    {
+      "id": 1958,
+      "timestamp": "2026-05-09T01:51:52.035043+00:00",
+      "event_type": "dashboard_pushed",
+      "job": "system",
+      "model_used": null,
+      "latency_ms": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "severity": "info",
+      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=584 intervals_ok=100.0% emails=1 errors=0)",
+      "metadata": {
+        "summary": "events=584 intervals_ok=100.0% emails=1 errors=0",
+        "commit_sha": "fa3f1de70a808e6649fbadc0d887a57b4506ec93"
+      }
+    },
     {
       "id": 1957,
       "timestamp": "2026-05-08T23:51:54.813760+00:00",
@@ -370,74 +438,6 @@
       "metadata": {
         "summary": "events=582 intervals_ok=100.0% emails=1 errors=0",
         "commit_sha": "fa006a91c4808881ae448288c288532d064dd7b3"
-      }
-    },
-    {
-      "id": 1932,
-      "timestamp": "2026-05-08T13:46:21.761464+00:00",
-      "event_type": "shutdown",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "ai-coach stopped",
-      "metadata": {}
-    },
-    {
-      "id": 1931,
-      "timestamp": "2026-05-08T13:46:21.710606+00:00",
-      "event_type": "system",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Telegram bot stopped",
-      "metadata": {}
-    },
-    {
-      "id": 1930,
-      "timestamp": "2026-05-08T13:46:11.225271+00:00",
-      "event_type": "system",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Telegram bot polling started",
-      "metadata": {}
-    },
-    {
-      "id": 1929,
-      "timestamp": "2026-05-08T13:46:10.531613+00:00",
-      "event_type": "startup",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "ai-coach booting",
-      "metadata": {}
-    },
-    {
-      "id": 1928,
-      "timestamp": "2026-05-08T13:45:02.566143+00:00",
-      "event_type": "dashboard_pushed",
-      "job": "system",
-      "model_used": null,
-      "latency_ms": null,
-      "tokens_in": null,
-      "tokens_out": null,
-      "severity": "info",
-      "message": "Dashboard pushed to N1jl0091/ai-coachv3@main (events=582 intervals_ok=100.0% emails=1 errors=0)",
-      "metadata": {
-        "summary": "events=582 intervals_ok=100.0% emails=1 errors=0",
-        "commit_sha": "9a6a14776fcddbf1b152d3479f2f93e814aa18aa"
       }
     }
   ]
